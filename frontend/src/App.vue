@@ -1,21 +1,27 @@
-<template>  
-  <div id="app"></div>
+<template>
+  <div id="app">
+    <Navigation />
+     <router-view :key="$route.fullPath"></router-view>
+  </div>
 </template>
 
-<script>  
-export default {  
-  name: "App"
+<script>
+import Navigation from "./components/Navigation.vue";
+
+export default {
+  name: "App",
+  components: { Navigation },
 };
 </script>
 
-<style lang="css">  
-a {  
+<style lang="css">
+a {
   text-decoration: none;
 }
 
-h1 {  
+h1 {
   font-family: Staatliches;
-  font-size: 120px;
+  font-size: 48px;
 }
 
 #category {
@@ -46,7 +52,7 @@ h1 {
   font-family: Staatliches;
 }
 
-img:hover {  
+img:hover {
   opacity: 1;
   transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
