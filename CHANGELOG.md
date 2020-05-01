@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.2 - graphql
+
+- `yarn add vue-apollo graphql apollo-client apollo-link apollo-link-http apollo-cache-inmemory graphql-tag`
+
 ## 0.1.1 - frontend
 
 - `sudo yarn global add @vue/cli`
