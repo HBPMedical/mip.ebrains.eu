@@ -12,7 +12,7 @@
   "devDependencies": {},
   "dependencies": {
     "knex": "<0.20.0",
-    "sqlite3": "latest",
+    "pg": "latest",
     "strapi": "3.0.0-beta.20.1",
     "strapi-admin": "3.0.0-beta.20.1",
     "strapi-connector-bookshelf": "3.0.0-beta.20.1",
@@ -28,7 +28,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "99327b0e-b582-4476-b00e-df26418d2e1b"
+    "uuid": "ecd85a3a-de12-435a-a03c-94984c21911d"
   },
   "engines": {
     "node": ">=10.0.0",
