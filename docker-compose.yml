@@ -2,13 +2,15 @@ version: "3"
 
 services:
   frontend:
-    container_name: mipfrontend
     image: hbpmip/mip-ebrains-eu:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 8080:80
+    links:
+      - backend
 
   backend:
-    container_name: mipbackend
     image: strapi/strapi
     environment:
       - NODE_ENV=production
@@ -24,10 +26,9 @@ services:
       - ./backend:/srv/app
     depends_on:
       - db
-    command: strapi start
+    command: bash -c "yarn build && yarn start"
 
   db:
-    container_name: mipdb
     image: postgres
     restart: always
     volumes:

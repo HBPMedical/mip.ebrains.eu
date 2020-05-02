@@ -2,7 +2,6 @@ version: "3"
 
 services:
   devfrontend:
-    container_name: devfrontend
     image: node
     ports:
       - 8080:8080
@@ -12,7 +11,6 @@ services:
     command: yarn serve
 
   devbackend:
-    container_name: devbackend
     image: strapi/strapi
     environment:
       - DATABASE_CLIENT=postgres
@@ -29,7 +27,6 @@ services:
       - devdb
 
   devdb:
-    container_name: devdb
     image: postgres
     restart: always
     volumes:
