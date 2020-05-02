@@ -1,30 +1,40 @@
-version: '3'
- 
+version: "3"
+
 services:
- strapi:
-   container_name: strapi
-   image: strapi/strapi
-   environment:
-     - DATABASE_CLIENT=postgres
-     - DATABASE_HOST=db
-     - DATABASE_PORT=5432
-     - DATABASE_NAME=strapi
-     - DATABASE_USERNAME=strapi
-     - DATABASE_PASSWORD=strapi
-   ports:
-     - 1337:1337
-   volumes:
-     - ./backend:/srv/app
-   depends_on:
-     - db
- 
- db:
-   container_name: postgres
-   image: postgres
-   restart: always
-   volumes:
-     - ./db:/var/lib/postgresql/data
-   environment:
-     POSTGRES_USER: strapi
-     POSTGRES_PASSWORD: strapi
-     POSTGRES_DB: strapi
+  frontend:
+    container_name: frontend
+    image: node
+    ports:
+      - 8080:8080
+    volumes:
+      - ./frontend:/usr/src/app
+    working_dir: /usr/src/app
+    command: yarn serve
+
+  backend:
+    container_name: backend
+    image: strapi/strapi
+    environment:
+      - DATABASE_CLIENT=postgres
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_NAME=strapi
+      - DATABASE_USERNAME=strapi
+      - DATABASE_PASSWORD=strapi
+    ports:
+      - 1337:1337
+    volumes:
+      - ./backend:/srv/app
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: postgres
+    restart: always
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+      POSTGRES_DB: strapi
