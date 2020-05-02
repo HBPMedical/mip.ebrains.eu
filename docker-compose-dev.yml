@@ -1,19 +1,22 @@
 version: "3"
 
 services:
-  frontend:
-    container_name: mipfrontend
-    image: hbpmip/mip-ebrains-eu:latest
+  devfrontend:
+    container_name: devfrontend
+    image: node
     ports:
       - 8080:8080
+    volumes:
+      - ./frontend:/usr/src/app
+    working_dir: /usr/src/app
+    command: yarn serve
 
-  backend:
-    container_name: mipbackend
+  devbackend:
+    container_name: devbackend
     image: strapi/strapi
     environment:
-      - NODE_ENV=production
       - DATABASE_CLIENT=postgres
-      - DATABASE_HOST=db
+      - DATABASE_HOST=devdb
       - DATABASE_PORT=5432
       - DATABASE_NAME=${POSTGRES_DB}
       - DATABASE_USERNAME=${POSTGRES_USER}
@@ -23,15 +26,14 @@ services:
     volumes:
       - ./backend:/srv/app
     depends_on:
-      - db
-    command: strapi start
+      - devdb
 
-  db:
-    container_name: mipdb
+  devdb:
+    container_name: devdb
     image: postgres
     restart: always
     volumes:
-      - ./db/prod/${POSTGRES_DB}:/var/lib/postgresql/data
+      - ./db/dev/${POSTGRES_DB}:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
