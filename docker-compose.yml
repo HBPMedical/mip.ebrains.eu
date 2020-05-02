@@ -5,7 +5,7 @@ services:
     container_name: mipfrontend
     image: hbpmip/mip-ebrains-eu:latest
     ports:
-      - 8080:8080
+      - 8080:80
 
   backend:
     container_name: mipbackend
