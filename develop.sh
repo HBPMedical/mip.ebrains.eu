@@ -1,4 +1,4 @@
-#! /bin/env bash
+#! /usr/bin/env bash
 
 # docker-compose reads from env
 cp .env.dev .env
