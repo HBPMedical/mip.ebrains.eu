@@ -22,6 +22,20 @@ You need [docker and docker-compose](https://www.docker.com/) in order to run th
 - create a `.env.prod` file based on `.env.dev` variables
 - `./deploy.sh`
 
+### Troubleshooting
+
+DNS queries inside docker fail with Error: getaddrinfo EAI_AGAIN
+Simple fix is to create the file `/etc/docker/daemon.json`
+and insert:
+
+```json
+{
+  "dns": ["10.0.0.2", "8.8.8.8"]
+}
+```
+
+- [Source on github](https://github.com/moby/moby/issues/32106)
+
 ## Develop
 
 - clone this repo
