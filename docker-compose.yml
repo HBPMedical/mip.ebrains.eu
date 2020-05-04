@@ -26,7 +26,7 @@ services:
       - ./backend:/srv/app
     depends_on:
       - db
-    command: bash -c "yarn build && yarn start"
+    command: bash -c "yarn install && yarn build && yarn start"
 
   db:
     image: postgres
