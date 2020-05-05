@@ -8,7 +8,7 @@ services:
     volumes:
       - ./frontend:/usr/src/app
     working_dir: /usr/src/app
-    command: yarn serve
+    command: bash -c "yarn install && yarn serve"
 
   devbackend:
     image: strapi/strapi
