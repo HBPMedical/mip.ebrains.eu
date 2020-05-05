@@ -15,7 +15,7 @@
             <router-link
               v-for="article in category.articles"
               v-bind:key="article.id"
-              v-bind:to="article.id"
+              v-bind:to="{ path: `/article/${article.id}` }"
               tag="b-dropdown-item"
               active-class="active"
               exact

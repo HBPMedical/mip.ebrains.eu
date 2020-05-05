@@ -1,12 +1,11 @@
 <template>
-  <div>
-    <div class="uk-section">
-      <div class="uk-container uk-container-large">
-        <h1>MIP</h1>
+  <b-container>
+    <b-row>
+      <b-col>
         <ArticlesList :articles="articles"></ArticlesList>
-      </div>
-    </div>
-  </div>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>

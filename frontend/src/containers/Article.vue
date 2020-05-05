@@ -1,25 +1,23 @@
 <template>
-  <div>
-    <div
-      v-if="article.image"
-      id="banner"
-      class="uk-height-small uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding"
-      :data-src="api_url + article.image.url"
-      uk-img
-    >
-      <h1>{{ article.title }}</h1>
-    </div>
-
-    <div class="uk-section">
-      <div class="uk-container uk-container-small">
+  <b-container>
+    <b-row>
+      <b-col>
+        <h2>{{ article.title }}</h2>
+        <b-img
+          v-if="article.image"
+          v-bind:src="api_url + article.image.url"
+          fluid
+          left
+          v-bind:alt="article.title"
+        ></b-img>
         <vue-markdown-it
           v-if="article.content"
           :source="article.content"
           id="editor"
         />
-      </div>
-    </div>
-  </div>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
