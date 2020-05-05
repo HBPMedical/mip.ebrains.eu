@@ -15,42 +15,6 @@ export default {
 </script>
 
 <style lang="css">
-a {
-  text-decoration: none;
-}
-
-h1 {
-  font-family: Staatliches;
-  font-size: 48px;
-}
-
-#category {
-  font-family: Staatliches;
-  font-weight: 500;
-}
-
-#title {
-  letter-spacing: 0.4px;
-  font-size: 22px;
-  font-size: 1.375rem;
-  line-height: 1.13636;
-}
-
-#banner {
-  margin: 20px;
-  height: 800px;
-}
-
-#editor {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.75;
-}
-
-.uk-navbar-container {
-  background: #fff !important;
-  font-family: Staatliches;
-}
 
 img:hover {
   opacity: 1;
