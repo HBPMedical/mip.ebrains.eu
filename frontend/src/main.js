@@ -1,4 +1,7 @@
+import '@babel/polyfill'
+import 'mutationobserver-shim'
 import Vue from "vue";
+import './plugins/bootstrap-vue'
 import VueApollo from "vue-apollo";
 import VueRouter from "vue-router";
 
