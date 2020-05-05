@@ -1,14 +1,14 @@
 version: "3"
 
 services:
-  devfrontend:
-    image: node
-    ports:
-      - 8080:8080
-    volumes:
-      - ./frontend:/usr/src/app
-    working_dir: /usr/src/app
-    command: bash -c "yarn install && yarn serve"
+  # devfrontend:
+  #   image: node
+  #   ports:
+  #     - 8080:8080
+  #   volumes:
+  #     - ./frontend:/usr/src/app
+  #   working_dir: /usr/src/app
+  #   command: bash -c "yarn install && yarn serve"
 
   devbackend:
     image: strapi/strapi

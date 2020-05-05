@@ -14,7 +14,7 @@ The website is based on
 
 ## Installation
 
-You need [docker and docker-compose](https://www.docker.com/) in order to run this stack, and that's it.
+You need [docker and docker-compose](https://www.docker.com/) in order to run this stack.
 
 ## Deploy
 
@@ -38,5 +38,10 @@ and insert:
 
 ## Develop
 
+You need [Node.js](https://nodejs.org/en/) and [yarn](https://yarnpkg.com/) in order to run this stack.
+
 - clone this repo
-- `./develop.sh`
+- `./develop.sh` will launch the Strapi CMS and Postgres
+- in another terminal, `cd frontend`
+- `yarn serve` will launch the frontend
+- You will need to `yarn install` at first launch.
