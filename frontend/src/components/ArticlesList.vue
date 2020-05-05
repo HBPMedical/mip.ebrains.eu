@@ -19,7 +19,12 @@
               </p>
               <p id="title" class="uk-text-large">{{ article.title }}</p>
               <div class="uk-card-media-top">
-                <img :src="api_url + article.image.url" alt="" height="100" />
+                <img
+                  v-if="article.image"
+                  :src="api_url + article.image.url"
+                  alt=""
+                  height="100"
+                />
               </div>
             </div>
           </div>
