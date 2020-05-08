@@ -31,8 +31,11 @@
       "type": "datetime"
     },
     "category": {
-      "via": "articles",
-      "model": "category"
+      "model": "category",
+      "via": "articles"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }
