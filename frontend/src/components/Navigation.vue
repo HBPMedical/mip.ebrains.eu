@@ -1,28 +1,22 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="light" variant="transparent">
-      <b-navbar-brand href="/">EBRAINS</b-navbar-brand>
+      <router-link tag="a" to="/" class="navbar-brand"
+        >EBRAINS</router-link
+      >
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown
-            v-for="category in categories"
-            v-bind:key="category.id"
-            v-bind:text="category.name"
-            right
+          <router-link tag="b-nav-item" to="/">About</router-link>
+          <router-link tag="b-nav-item" to="/documentation"
+            >Documentation</router-link
           >
-            <router-link
-              v-for="article in category.articles"
-              v-bind:key="article.id"
-              v-bind:to="{ path: `/article/${article.id}` }"
-              tag="b-dropdown-item"
-              active-class="active"
-              exact
-            >
-              <a>{{ article.title }}</a>
-            </router-link>
-          </b-nav-item-dropdown>
+          <router-link tag="b-nav-item" to="/support">Support</router-link>
+          <router-link tag="b-nav-item" to="/developer">Developer</router-link>
+          <router-link tag="b-nav-item" to="/federation"
+            >Federated MIP login</router-link
+          >
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -30,28 +24,7 @@
 </template>
 
 <script>
-import gql from "graphql-tag";
-
 export default {
   name: "Navigation",
-  data() {
-    return {
-      categories: [],
-    };
-  },
-  apollo: {
-    categories: gql`
-      query Categories {
-        categories {
-          id
-          name
-          articles {
-            id
-            title
-          }
-        }
-      }
-    `,
-  },
 };
 </script>
