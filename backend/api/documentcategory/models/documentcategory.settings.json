@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "documentcategories",
+  "info": {
+    "name": "Documentcategory"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "documents": {
+      "via": "documentcategory",
+      "collection": "document"
+    }
+  }
+}
