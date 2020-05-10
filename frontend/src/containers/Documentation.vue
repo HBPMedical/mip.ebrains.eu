@@ -36,7 +36,7 @@
             class="mb-2"
           >
             <b-list-group flush>
-              <b-list-group-item
+              <b-list-group-item action class="video-list"
                 v-for="video in videos"
                 :key="video.id"
                 :title="video.title"
@@ -58,6 +58,7 @@
                     width="640"
                     height="360"
                     allow="autoplay; fullscreen"
+                    frameBorder="0"
                   ></iframe>
               </b-modal>
             </b-list-group>
@@ -115,5 +116,8 @@ export default {
 <style scoped>
 .card {
   margin-top: 16px;
+}
+.video-list {
+  cursor: pointer;
 }
 </style>

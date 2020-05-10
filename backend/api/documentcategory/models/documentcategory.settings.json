@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "documentcategories",
   "info": {
-    "name": "Documentcategory"
+    "name": "Document category"
   },
   "options": {
     "increments": true,
@@ -16,8 +16,8 @@
       "type": "integer"
     },
     "documents": {
-      "via": "documentcategory",
-      "collection": "document"
+      "collection": "document",
+      "via": "documentcategory"
     }
   }
 }
