@@ -58,7 +58,6 @@
                     width="640"
                     height="360"
                     allow="autoplay; fullscreen"
-                    frameBorder="0"
                   ></iframe>
               </b-modal>
             </b-list-group>
@@ -119,5 +118,8 @@ export default {
 }
 .video-list {
   cursor: pointer;
+}
+iframe {
+  border: none;
 }
 </style>
