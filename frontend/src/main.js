@@ -7,10 +7,17 @@ import VueRouter from "vue-router";
 
 import apolloClient from "./vue-apollo";
 
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 import App from "./App.vue";
 
 Vue.use(VueApollo);
 Vue.use(VueRouter);
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
 Vue.config.productionTip = false;
 
 const apolloProvider = new VueApollo({
@@ -42,8 +49,8 @@ const router = new VueRouter({
     },
     {
       path: "/article/:id",
-      components: require("./containers/Article.vue")
-    }
+      components: require("./containers/Article.vue"),
+    },
   ],
 });
 

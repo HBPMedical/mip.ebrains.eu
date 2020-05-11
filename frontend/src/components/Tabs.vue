@@ -1,19 +1,15 @@
 <template>
   <b-tabs content-class="mt-3" fill>
-    <b-tab
-      v-for="article in articles"
-      :key="article.id"
-      v-bind:title="article.title"
-    >
+    <b-tab v-for="article in articles" :key="article.id" :title="article.title">
       <div>
         <h2>{{ article.title }}</h2>
         <b-img
           v-if="article.image"
-          v-bind:src="api_url + article.image.url"
+          :src="api_url + article.image.url"
           fluid
-          width="200px"
+          width="320px"
           right
-          v-bind:alt="article.title"
+          :alt="article.title"
         ></b-img>
         <vue-markdown-it
           v-if="article.content"
@@ -26,6 +22,7 @@
 
 <script>
 import VueMarkdownIt from "vue-markdown-it";
+
 export default {
   data: function() {
     return {
@@ -41,9 +38,30 @@ export default {
 };
 </script>
 
-<style scoped>
-.tabs {
-  margin: 16px 0;
+<style>
+.nav-tabs {
+  border: 0 solid transparent;
 }
 
+.nav-tabs .nav-link,
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:active,
+.nav-tabs .nav-link.active {
+  border: 0px solid transparent;
+  outline: 1px solid transparent;
+  border-bottom: 1px solid #dddddd;
+}
+
+.nav-tabs  a.nav-link {
+  color: rgba(0,0,0,.5);
+}
+
+.nav-tabs a.nav-link:hover {
+  color: rgba(0,0,0,.7);
+}
+
+.nav-tabs  .nav-item .nav-link.active {
+  border-bottom: 5px solid #dddddd;
+}
 </style>
