@@ -1,23 +1,22 @@
 {
   "kind": "collectionType",
-  "collectionName": "documentcategories",
+  "collectionName": "videos",
   "info": {
-    "name": "Document category"
+    "name": "Video"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "name": {
+    "title": {
+      "type": "string"
+    },
+    "source": {
       "type": "string"
     },
     "order": {
       "type": "integer"
-    },
-    "documents": {
-      "collection": "document",
-      "via": "documentcategory"
     }
   }
 }
