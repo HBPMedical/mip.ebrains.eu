@@ -9,8 +9,8 @@
             v-for="categorie in documentcategories"
             :key="categorie.id"
             :title="categorie.name"
-            img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Image"
+            :img-src="api_url + categorie.image.url"
+            :img-alt="categorie.name"
             img-top
             style="max-width: 20rem;"
             class="mb-2"
@@ -30,7 +30,7 @@
           <b-card
             title="Video tutorial"
             img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Image"
+            img-alt="Video Tutorial"
             img-top
             style="max-width: 20rem;"
             class="mb-2"
@@ -89,6 +89,9 @@ export default {
         documentcategories(sort: "order:asc") {
           id
           name
+          image {
+            url
+          }
           documents(sort: "order:asc") {
             id
             title
