@@ -26,16 +26,18 @@
               </b-list-group-item>
             </b-list-group>
             <b-list-group flush>
-              <b-list-group-item
+            <b-list-group-item action class="documentation-list"
                 v-for="article in categorie.articles"
                 :key="article.id"
                 :title="article.title"
-              >
+                v-on:click="displaycontent = article.content;"
+                v-b-toggle.display
+            >
                 {{ article.title }}
-              </b-list-group-item>
+            </b-list-group-item>
             </b-list-group>
             <b-list-group flush>
-              <b-list-group-item action class="video-list"
+              <b-list-group-item action class="documentation-list"
                 v-for="video in categorie.videos"
                 :key="video.id"
                 :title="video.title"
@@ -64,6 +66,9 @@
             </b-list-group>
           </b-card>
         </b-card-group>
+        <b-collapse id="display">
+          <p> {{ displaycontent }} </p>          
+        </b-collapse>
       </b-col>
     </b-row>
   </b-container>
@@ -76,6 +81,7 @@ export default {
   data() {
     return {
       documentcategories: {},
+      displaycontent: "",
       api_url: process.env.VUE_APP_STRAPI_API_URL,
     };
   },
@@ -119,7 +125,7 @@ export default {
 .card {
   margin-top: 16px;
 }
-.video-list {
+.documentation-list {
   cursor: pointer;
 }
 .videoWrapper {
