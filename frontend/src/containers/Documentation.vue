@@ -26,7 +26,7 @@
               </b-list-group-item>
             </b-list-group>
             <b-list-group flush>
-            <b-list-group-item action class="documentation-list"
+              <b-list-group-item action class="documentation-list"
                 v-for="article in categorie.articles"
                 :key="article.id"
                 :title="article.title"
@@ -36,7 +36,7 @@
                 "
             >
                 {{ article.title }}
-            </b-list-group-item>
+              </b-list-group-item>
             </b-list-group>
             <b-list-group flush>
               <b-list-group-item action class="documentation-list"
@@ -68,14 +68,14 @@
             </b-list-group>
           </b-card>
         </b-card-group>
-          <b-card id="display">
-            <h3> {{ displaytitle }} </h3>
-            <vue-markdown-it
-              v-if="displaycontent"
-              :source="displaycontent"
-              id="editor"
-            />
-          </b-card>
+        <b-card id="display">
+          <h3> {{ displaytitle }} </h3>
+          <vue-markdown-it
+            v-if="displaycontent"
+            :source="displaycontent"
+            id="editor"
+          />
+        </b-card>
       </b-col>
     </b-row>
   </b-container>
