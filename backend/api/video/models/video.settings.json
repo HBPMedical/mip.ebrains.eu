@@ -19,8 +19,8 @@
       "type": "integer"
     },
     "documentcategory": {
-      "model": "documentcategory",
-      "via": "videos"
+      "via": "videos",
+      "model": "documentcategory"
     }
   }
 }
