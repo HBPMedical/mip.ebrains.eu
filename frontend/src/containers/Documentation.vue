@@ -26,6 +26,15 @@
               </b-list-group-item>
             </b-list-group>
             <b-list-group flush>
+              <b-list-group-item
+                v-for="article in categorie.articles"
+                :key="article.id"
+                :title="article.title"
+              >
+                {{ article.title }}
+              </b-list-group-item>
+            </b-list-group>
+            <b-list-group flush>
               <b-list-group-item action class="video-list"
                 v-for="video in categorie.videos"
                 :key="video.id"
@@ -42,13 +51,15 @@
                 size="lg"
                 hide-footer
                 centered>
-                  <iframe
-                    :title="video.title"
-                    :src="video.source"
-                    width="640"
-                    height="360"
-                    allow="autoplay; fullscreen"
-                  ></iframe>
+                  <div class="videoWrapper">
+                    <iframe
+                      :title="video.title"
+                      :src="video.source"
+                      width="640"
+                      height="360"
+                      allow="autoplay; fullscreen"
+                    ></iframe>
+                  </div>
               </b-modal>
             </b-list-group>
           </b-card>
@@ -89,6 +100,14 @@ export default {
             title
             source
           }
+          articles(sort: "order:asc") {
+            id
+            title
+            content
+            image {
+              url
+            }
+          }
         }
       }
     `,
@@ -103,7 +122,17 @@ export default {
 .video-list {
   cursor: pointer;
 }
-iframe {
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: none;
 }
 </style>

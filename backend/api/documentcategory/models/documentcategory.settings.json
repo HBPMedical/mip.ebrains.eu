@@ -30,12 +30,13 @@
       "plugin": "upload",
       "required": false
     },
-    "documentstype": {
-      "type": "string"
-    },
     "videos": {
-      "via": "documentcategory",
-      "collection": "video"
+      "collection": "video",
+      "via": "documentcategory"
+    },
+    "articles": {
+      "collection": "article",
+      "via": "document_category"
     }
   }
 }
