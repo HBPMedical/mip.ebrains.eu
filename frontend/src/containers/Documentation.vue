@@ -26,6 +26,15 @@
               </b-list-group-item>
             </b-list-group>
             <b-list-group flush>
+              <b-list-group-item
+                v-for="article in categorie.articles"
+                :key="article.id"
+                :title="article.title"
+              >
+                {{ article.title }}
+              </b-list-group-item>
+            </b-list-group>
+            <b-list-group flush>
               <b-list-group-item action class="video-list"
                 v-for="video in categorie.videos"
                 :key="video.id"
@@ -90,6 +99,14 @@ export default {
             id
             title
             source
+          }
+          articles(sort: "order:asc") {
+            id
+            title
+            content
+            image {
+              url
+            }
           }
         }
       }
