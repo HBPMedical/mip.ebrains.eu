@@ -2,7 +2,6 @@
   <b-container>
     <b-row>
       <b-col>
-        <Header />
         <h2>Documentation</h2>
         <b-card-group deck>
           <b-card
@@ -69,13 +68,9 @@
 </template>
 
 <script>
-import Header from "../components/PageHeader.vue";
 import gql from "graphql-tag";
 
 export default {
-  components: {
-    Header,
-  },
   data() {
     return {
       documentcategories: {},
