@@ -37,11 +37,11 @@ const router = new VueRouter({
     },
     {
       path: "/support",
-      components: require("./containers/Documentation.vue")
+      components: require("./containers/Support.vue")
     },
     {
       path: "/developer",
-      components: require("./containers/Documentation.vue")
+      components: require("./containers/Developer.vue")
     },
     {
       path: "/federation",

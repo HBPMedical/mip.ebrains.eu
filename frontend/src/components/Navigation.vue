@@ -121,7 +121,7 @@
         <router-link tag="b-nav-item" to="/documentation"
           >Documentation</router-link
         >
-        <router-link tag="b-nav-item" to="/support">Support</router-link>
+        <!-- <router-link tag="b-nav-item" to="/support">Support</router-link> -->
         <router-link tag="b-nav-item" to="/developer">Developer</router-link>
         <router-link tag="b-nav-item" to="/federation"
           >Federated MIP login</router-link
