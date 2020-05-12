@@ -30,8 +30,10 @@
                 v-for="article in categorie.articles"
                 :key="article.id"
                 :title="article.title"
-                v-on:click="displaycontent = article.content;"
-                v-b-toggle.display
+                v-on:click="
+                  displaytitle = article.title;
+                  displaycontent = article.content;
+                "
             >
                 {{ article.title }}
             </b-list-group-item>
@@ -66,15 +68,21 @@
             </b-list-group>
           </b-card>
         </b-card-group>
-        <b-collapse id="display">
-          <p> {{ displaycontent }} </p>          
-        </b-collapse>
+          <b-card id="display">
+            <h3> {{ displaytitle }} </h3>
+            <vue-markdown-it
+              v-if="displaycontent"
+              :source="displaycontent"
+              id="editor"
+            />
+          </b-card>
       </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
+import VueMarkdownIt from "vue-markdown-it";
 import gql from "graphql-tag";
 
 export default {
@@ -82,6 +90,7 @@ export default {
     return {
       documentcategories: {},
       displaycontent: "",
+      displaytitle: "",
       api_url: process.env.VUE_APP_STRAPI_API_URL,
     };
   },
@@ -117,6 +126,9 @@ export default {
         }
       }
     `,
+  },
+  components: {
+    VueMarkdownIt,
   },
 };
 </script>
