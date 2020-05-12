@@ -45,12 +45,8 @@ const router = new VueRouter({
     },
     {
       path: "/federation",
-      components: require("./containers/Documentation.vue")
-    },
-    {
-      path: "/article/:id",
-      components: require("./containers/Article.vue"),
-    },
+      components: require("./containers/Federation.vue")
+    }
   ],
 });
 

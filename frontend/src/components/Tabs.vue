@@ -7,27 +7,15 @@
         :title="article.title"
       >
         <div class="article">
-          <h2>{{ article.title }}</h2>
-          <b-img
-            v-if="article.image"
-            :src="api_url + article.image.url"
-            fluid
-            width="400px"
-            right
-            :alt="article.title"
-          ></b-img>
-          <vue-markdown-it
-            v-if="article.content"
-            :source="article.content"
-            id="editor"
-          /></div
-      ></b-tab>
+          <Article :article="article"/>
+        </div>
+      </b-tab>
     </b-tabs>
   </div>
 </template>
 
 <script>
-import VueMarkdownIt from "vue-markdown-it";
+import Article from "../components/Article.vue";
 
 export default {
   data: function() {
@@ -36,7 +24,7 @@ export default {
     };
   },
   components: {
-    VueMarkdownIt,
+    Article,
   },
   props: {
     articles: Array,
@@ -50,7 +38,7 @@ export default {
 }
 
 .tabs {
-  margin: 3rem 0;
+  margin: 1rem 0 3rem 0;
 }
 
 .nav-tabs {
@@ -69,6 +57,7 @@ export default {
 
 .nav-tabs a.nav-link {
   color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
 }
 
 .nav-tabs a.nav-link:hover {
