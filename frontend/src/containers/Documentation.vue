@@ -25,18 +25,9 @@
                 {{ document.title }}
               </b-list-group-item>
             </b-list-group>
-          </b-card>
-          <b-card
-            title="Video tutorial"
-            img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Video Tutorial"
-            img-top
-            style="max-width: 20rem;"
-            class="mb-2"
-          >
             <b-list-group flush>
               <b-list-group-item action class="video-list"
-                v-for="video in videos"
+                v-for="video in categorie.videos"
                 :key="video.id"
                 :title="video.title"
                 @click="$bvModal.show(video.id)"
@@ -44,7 +35,7 @@
                 {{ video.title }}
               </b-list-group-item>
               <b-modal
-                v-for="video in videos"
+                v-for="video in categorie.videos"
                 :key="video.id"
                 :id="video.id"
                 :title="video.title"
@@ -74,7 +65,6 @@ export default {
   data() {
     return {
       documentcategories: {},
-      videos: {},
       api_url: process.env.VUE_APP_STRAPI_API_URL,
     };
   },
@@ -94,15 +84,11 @@ export default {
               url
             }
           }
-        }
-      }
-    `,
-    videos: gql`
-      query Videos {
-        videos(sort: "order:asc") {
-          id
-          title
-          source
+          videos(sort: "order:asc") {
+            id
+            title
+            source
+          }
         }
       }
     `,

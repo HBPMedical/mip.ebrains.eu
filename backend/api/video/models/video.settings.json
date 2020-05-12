@@ -17,6 +17,10 @@
     },
     "order": {
       "type": "integer"
+    },
+    "documentcategory": {
+      "model": "documentcategory",
+      "via": "videos"
     }
   }
 }
