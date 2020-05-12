@@ -1,23 +1,29 @@
 <template>
-  <b-tabs content-class="mt-3" fill>
-    <b-tab v-for="article in articles" :key="article.id" :title="article.title">
-      <div>
-        <h2>{{ article.title }}</h2>
-        <b-img
-          v-if="article.image"
-          :src="api_url + article.image.url"
-          fluid
-          width="320px"
-          right
-          :alt="article.title"
-        ></b-img>
-        <vue-markdown-it
-          v-if="article.content"
-          :source="article.content"
-          id="editor"
-        /></div
-    ></b-tab>
-  </b-tabs>
+  <div class="tabs">
+    <b-tabs content-class="mt-3" fill>
+      <b-tab
+        v-for="article in articles"
+        :key="article.id"
+        :title="article.title"
+      >
+        <div class="article">
+          <h2>{{ article.title }}</h2>
+          <b-img
+            v-if="article.image"
+            :src="api_url + article.image.url"
+            fluid
+            width="400px"
+            right
+            :alt="article.title"
+          ></b-img>
+          <vue-markdown-it
+            v-if="article.content"
+            :source="article.content"
+            id="editor"
+          /></div
+      ></b-tab>
+    </b-tabs>
+  </div>
 </template>
 
 <script>
@@ -39,6 +45,14 @@ export default {
 </script>
 
 <style>
+.article {
+  margin: 3rem 0;
+}
+
+.tabs {
+  margin: 3rem 0;
+}
+
 .nav-tabs {
   border: 0 solid transparent;
 }
@@ -53,15 +67,19 @@ export default {
   border-bottom: 1px solid #dddddd;
 }
 
-.nav-tabs  a.nav-link {
-  color: rgba(0,0,0,.5);
+.nav-tabs a.nav-link {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .nav-tabs a.nav-link:hover {
-  color: rgba(0,0,0,.7);
+  color: rgba(0, 0, 0, 0.7);
 }
 
-.nav-tabs  .nav-item .nav-link.active {
+.nav-tabs .nav-item .nav-link.active {
   border-bottom: 5px solid #dddddd;
+}
+
+.tab-content img {
+  margin: 0 0 16px 16px;
 }
 </style>

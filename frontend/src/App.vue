@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <b-container>
-      <Navigation />
+    <b-container fluid class="header">
+      <b-container>
+        <Navigation />
+      </b-container>
+    </b-container>
+    <b-container class="content">
       <router-view :key="$route.fullPath"></router-view>
     </b-container>
   </div>
@@ -16,9 +20,14 @@ export default {
 };
 </script>
 
-<style lang="css">
-img:hover {
-  opacity: 1;
-  transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
+<style>
+.header {
+  background: no-repeat top/100% url("~@/assets/body-bg.jpg");
+  height: 24rem;
+}
+
+.content {
+  background-color: #fff;
+  margin-top: 2rem;
 }
 </style>

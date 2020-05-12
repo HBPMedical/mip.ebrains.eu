@@ -2,7 +2,6 @@
   <b-container>
     <b-row>
       <b-col>
-        <Header />
         <Tabs :articles="articles"></Tabs>
       </b-col>
     </b-row>
@@ -11,13 +10,12 @@
 
 <script>
 import Tabs from "../components/Tabs.vue";
-import Header from "../components/PageHeader.vue";
+
 import gql from "graphql-tag";
 
 export default {
   components: {
     Tabs,
-    Header,
   },
   data() {
     return {
