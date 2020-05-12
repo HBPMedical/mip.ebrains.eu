@@ -8,7 +8,7 @@
     >
       <div class="header-card">
         <h1>The Medical Informatics Platform</h1>
-        <p>Federated analysis on pseudo-anonymized clinical data</p>
+        <p>Secure federated analysis on clinical data</p>
       </div>
     </b-container>
     <b-container class="content">
