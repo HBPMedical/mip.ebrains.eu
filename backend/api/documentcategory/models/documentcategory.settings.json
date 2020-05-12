@@ -29,6 +29,13 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "documentstype": {
+      "type": "string"
+    },
+    "videos": {
+      "via": "documentcategory",
+      "collection": "video"
     }
   }
 }
