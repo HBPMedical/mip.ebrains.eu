@@ -26,16 +26,20 @@
               </b-list-group-item>
             </b-list-group>
             <b-list-group flush>
-              <b-list-group-item
+              <b-list-group-item action class="documentation-list"
                 v-for="article in categorie.articles"
                 :key="article.id"
                 :title="article.title"
-              >
+                v-on:click="
+                  displaytitle = article.title;
+                  displaycontent = article.content;
+                "
+            >
                 {{ article.title }}
               </b-list-group-item>
             </b-list-group>
             <b-list-group flush>
-              <b-list-group-item action class="video-list"
+              <b-list-group-item action class="documentation-list"
                 v-for="video in categorie.videos"
                 :key="video.id"
                 :title="video.title"
@@ -64,18 +68,29 @@
             </b-list-group>
           </b-card>
         </b-card-group>
+        <b-card id="display">
+          <h3> {{ displaytitle }} </h3>
+          <vue-markdown-it
+            v-if="displaycontent"
+            :source="displaycontent"
+            id="editor"
+          />
+        </b-card>
       </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
+import VueMarkdownIt from "vue-markdown-it";
 import gql from "graphql-tag";
 
 export default {
   data() {
     return {
       documentcategories: {},
+      displaycontent: "",
+      displaytitle: "",
       api_url: process.env.VUE_APP_STRAPI_API_URL,
     };
   },
@@ -112,6 +127,9 @@ export default {
       }
     `,
   },
+  components: {
+    VueMarkdownIt,
+  },
 };
 </script>
 
@@ -119,7 +137,7 @@ export default {
 .card {
   margin-top: 16px;
 }
-.video-list {
+.documentation-list {
   cursor: pointer;
 }
 .videoWrapper {
