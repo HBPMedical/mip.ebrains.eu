@@ -8,10 +8,6 @@
             v-for="categorie in documentcategories"
             :key="categorie.id"
             :title="categorie.name"
-            :img-src="api_url + categorie.image.url"
-            :img-alt="categorie.name"
-            img-top
-            style="max-width: 20rem;"
             class="mb-2"
           >
             <b-list-group flush>
@@ -26,7 +22,9 @@
               </b-list-group-item>
             </b-list-group>
             <b-list-group flush>
-              <b-list-group-item action class="documentation-list"
+              <b-list-group-item
+                action
+                class="documentation-list"
                 v-for="article in categorie.articles"
                 :key="article.id"
                 :title="article.title"
@@ -34,12 +32,14 @@
                   displaytitle = article.title;
                   displaycontent = article.content;
                 "
-            >
+              >
                 {{ article.title }}
               </b-list-group-item>
             </b-list-group>
             <b-list-group flush>
-              <b-list-group-item action class="documentation-list"
+              <b-list-group-item
+                action
+                class="documentation-list"
                 v-for="video in categorie.videos"
                 :key="video.id"
                 :title="video.title"
@@ -49,27 +49,28 @@
               </b-list-group-item>
               <b-modal
                 v-for="video in categorie.videos"
-                :key="video.id"
+                :key="`list-${video.id}`"
                 :id="video.id"
                 :title="video.title"
                 size="lg"
                 hide-footer
-                centered>
-                  <div class="videoWrapper">
-                    <iframe
-                      :title="video.title"
-                      :src="video.source"
-                      width="640"
-                      height="360"
-                      allow="autoplay; fullscreen"
-                    ></iframe>
-                  </div>
+                centered
+              >
+                <div class="videoWrapper">
+                  <iframe
+                    :title="video.title"
+                    :src="video.source"
+                    width="640"
+                    height="360"
+                    allow="autoplay; fullscreen"
+                  ></iframe>
+                </div>
               </b-modal>
             </b-list-group>
           </b-card>
         </b-card-group>
         <b-card id="display">
-          <h3> {{ displaytitle }} </h3>
+          <h3>{{ displaytitle }}</h3>
           <vue-markdown-it
             v-if="displaycontent"
             :source="displaycontent"
@@ -106,6 +107,7 @@ export default {
           documents(sort: "order:asc") {
             id
             title
+
             content {
               url
             }
