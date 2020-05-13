@@ -31,6 +31,7 @@
                 v-on:click="
                   displaytitle = article.title;
                   displaycontent = article.content;
+                  scrolltotarget();
                 "
               >
                 {{ article.title }}
@@ -132,6 +133,12 @@ export default {
   components: {
     VueMarkdownIt,
   },
+  methods: {
+    scrolltotarget: function () {
+      var target = document.getElementById("display");
+      target.scrollIntoView();
+    }
+  }
 };
 </script>
 
