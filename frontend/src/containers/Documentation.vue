@@ -162,4 +162,7 @@ export default {
   height: 100%;
   border: none;
 }
+#display {
+  scroll-margin-top: 100px;
+}
 </style>
