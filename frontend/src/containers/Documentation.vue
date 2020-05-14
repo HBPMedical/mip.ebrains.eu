@@ -27,7 +27,7 @@
             v-for="article in categorie.articles"
             :key="article.id"
             :title="article.title"
-            :to="here + '/' + article.id"
+            :to="here + '/' + article.title"
           >
             {{ article.title }}
           </b-list-group-item>

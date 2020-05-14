@@ -8,15 +8,11 @@
       return {
         items: [
           {
-            text: 'Admin',
-            href: '#'
+            text: 'Documentation',
+            href: '/documentation'
           },
           {
-            text: 'Manage',
-            href: '#'
-          },
-          {
-            text: 'Library',
+            text: this.$route.params.articleid,
             active: true
           }
         ]
