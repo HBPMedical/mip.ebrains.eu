@@ -27,7 +27,7 @@
             v-for="article in categorie.articles"
             :key="article.id"
             :title="article.title"
-            :to="documentation + article.id"
+            :to="here + '/' + article.id"
           >
             {{ article.title }}
           </b-list-group-item>
@@ -75,7 +75,7 @@ export default {
   data() {
     return {
       documentcategories: {},
-      documentation: "/documentation/",
+      here: this.$route.path,
       api_url: process.env.VUE_APP_STRAPI_API_URL,
     };
   },
