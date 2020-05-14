@@ -17,50 +17,6 @@
             :href="api_url + document.content.url"
             target="_blank"
           >
-<<<<<<< HEAD
-            <b-list-group flush>
-              <b-list-group-item
-                v-for="document in categorie.documents"
-                :key="document.id"
-                :title="document.title"
-                :href="api_url + document.content.url"
-                target="_blank"
-              >
-                {{ document.title }}
-              </b-list-group-item>
-            </b-list-group>
-            <b-list-group flush>
-              <b-list-group-item
-                action
-                class="documentation-list"
-                v-for="article in categorie.articles"
-                :key="article.id"
-                :title="article.title"
-                v-on:click="
-                  displaytitle = article.title;
-                  displaycontent = article.content;
-                  scrolltotarget();
-                "
-              >
-                {{ article.title }}
-              </b-list-group-item>
-            </b-list-group>
-            <b-list-group flush>
-              <b-list-group-item
-                action
-                class="documentation-list"
-                v-for="video in categorie.videos"
-                :key="video.id"
-                :title="video.title"
-                @click="$bvModal.show(video.id)"
-              >
-                {{ video.title }}
-              </b-list-group-item>
-              <b-modal
-                v-for="video in categorie.videos"
-                :key="`list-${video.id}`"
-                :id="video.id"
-=======
             {{ document.title }}
           </b-list-group-item>
         </b-list-group>
@@ -101,7 +57,6 @@
           >
             <div class="videoWrapper">
               <iframe
->>>>>>> ac5b2603d599d4aeca6e9ad3852cdd78e4e03630
                 :title="video.title"
                 :src="video.source"
                 width="640"
