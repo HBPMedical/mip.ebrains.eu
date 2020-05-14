@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <Breadcrumb />
-
+     <Article :article="article" />
     <!-- <h2>{{ document.title }}</h2> -->
     <!-- <b-img
           v-if="document.image"
@@ -21,6 +21,7 @@
 
 <script>
 import Breadcrumb from "../components/Breadcrumb.vue";
+import Article from "../components/Article.vue";
 // import VueMarkdownIt from "vue-markdown-it";
 
 export default {
@@ -31,10 +32,11 @@ export default {
   },
   components: {
     Breadcrumb,
+    Article,
     // VueMarkdownIt,
   },
   props: {
-    document: {},
+    article: {},
   },
 };
 </script>

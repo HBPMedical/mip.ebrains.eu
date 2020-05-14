@@ -27,7 +27,7 @@
             v-for="article in categorie.articles"
             :key="article.id"
             :title="article.title"
-            :to="here + '/' + article.title"
+            :to="here + '/' + article.document_category.name + '/' + article.title"
           >
             {{ article.title }}
           </b-list-group-item>
@@ -105,6 +105,9 @@ export default {
             id
             title
             content
+            document_category {
+              name
+            }
             image {
               url
             }
