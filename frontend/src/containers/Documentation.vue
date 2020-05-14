@@ -27,10 +27,7 @@
             v-for="article in categorie.articles"
             :key="article.id"
             :title="article.title"
-            v-on:click="
-              displaytitle = article.title;
-              displaycontent = article.content;
-            "
+            :to="documentation + article.id"
           >
             {{ article.title }}
           </b-list-group-item>
@@ -68,27 +65,17 @@
         </b-list-group>
       </b-card>
     </b-card-group>
-    <b-card id="display">
-      <h3>{{ displaytitle }}</h3>
-      <vue-markdown-it
-        v-if="displaycontent"
-        :source="displaycontent"
-        id="editor"
-      />
-    </b-card>
   </b-container>
 </template>
 
 <script>
-import VueMarkdownIt from "vue-markdown-it";
 import gql from "graphql-tag";
 
 export default {
   data() {
     return {
       documentcategories: {},
-      displaycontent: "",
-      displaytitle: "",
+      documentation: "/documentation/",
       api_url: process.env.VUE_APP_STRAPI_API_URL,
     };
   },
@@ -126,15 +113,6 @@ export default {
       }
     `,
   },
-  components: {
-    VueMarkdownIt,
-  },
-  methods: {
-    scrolltotarget: function () {
-      var target = document.getElementById("display");
-      target.scrollIntoView();
-    }
-  }
 };
 </script>
 
