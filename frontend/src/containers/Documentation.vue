@@ -1,15 +1,23 @@
 <template>
   <b-container>
-    <b-row>
-      <b-col>
-        <h2>Documentation</h2>
-        <b-card-group deck>
-          <b-card
-            v-for="categorie in documentcategories"
-            :key="categorie.id"
-            :title="categorie.name"
-            class="mb-2"
+    <h2>Documentation</h2>
+    <router-link to="/documentation/5">Demo link</router-link>
+    <b-card-group deck>
+      <b-card
+        v-for="categorie in documentcategories"
+        :key="categorie.id"
+        :title="categorie.name"
+        class="mb-2"
+      >
+        <b-list-group flush>
+          <b-list-group-item
+            v-for="document in categorie.documents"
+            :key="document.id"
+            :title="document.title"
+            :href="api_url + document.content.url"
+            target="_blank"
           >
+<<<<<<< HEAD
             <b-list-group flush>
               <b-list-group-item
                 v-for="document in categorie.documents"
@@ -52,34 +60,67 @@
                 v-for="video in categorie.videos"
                 :key="`list-${video.id}`"
                 :id="video.id"
+=======
+            {{ document.title }}
+          </b-list-group-item>
+        </b-list-group>
+        <b-list-group flush>
+          <b-list-group-item
+            action
+            class="documentation-list"
+            v-for="article in categorie.articles"
+            :key="article.id"
+            :title="article.title"
+            v-on:click="
+              displaytitle = article.title;
+              displaycontent = article.content;
+            "
+          >
+            {{ article.title }}
+          </b-list-group-item>
+        </b-list-group>
+        <b-list-group flush>
+          <b-list-group-item
+            action
+            class="documentation-list"
+            v-for="video in categorie.videos"
+            :key="video.id"
+            :title="video.title"
+            @click="$bvModal.show(video.id)"
+          >
+            {{ video.title }}
+          </b-list-group-item>
+          <b-modal
+            v-for="video in categorie.videos"
+            :key="`list-${video.id}`"
+            :id="video.id"
+            :title="video.title"
+            size="lg"
+            hide-footer
+            centered
+          >
+            <div class="videoWrapper">
+              <iframe
+>>>>>>> ac5b2603d599d4aeca6e9ad3852cdd78e4e03630
                 :title="video.title"
-                size="lg"
-                hide-footer
-                centered
-              >
-                <div class="videoWrapper">
-                  <iframe
-                    :title="video.title"
-                    :src="video.source"
-                    width="640"
-                    height="360"
-                    allow="autoplay; fullscreen"
-                  ></iframe>
-                </div>
-              </b-modal>
-            </b-list-group>
-          </b-card>
-        </b-card-group>
-        <b-card id="display">
-          <h3>{{ displaytitle }}</h3>
-          <vue-markdown-it
-            v-if="displaycontent"
-            :source="displaycontent"
-            id="editor"
-          />
-        </b-card>
-      </b-col>
-    </b-row>
+                :src="video.source"
+                width="640"
+                height="360"
+                allow="autoplay; fullscreen"
+              ></iframe>
+            </div>
+          </b-modal>
+        </b-list-group>
+      </b-card>
+    </b-card-group>
+    <b-card id="display">
+      <h3>{{ displaytitle }}</h3>
+      <vue-markdown-it
+        v-if="displaycontent"
+        :source="displaycontent"
+        id="editor"
+      />
+    </b-card>
   </b-container>
 </template>
 
