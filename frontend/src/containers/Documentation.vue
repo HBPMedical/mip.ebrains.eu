@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <h2>Documentation</h2>
-    <router-link to="/documentation/5">Demo link</router-link>
+    <!--<router-link to="/documentation/5">Demo link</router-link>-->
     <b-card-group deck>
       <b-card
         v-for="categorie in documentcategories"
