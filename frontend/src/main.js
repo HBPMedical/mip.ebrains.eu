@@ -36,6 +36,10 @@ const router = new VueRouter({
       components: require("./containers/Documentation.vue")
     },
     {
+      path: "/documentation/:id",
+      components: require("./containers/Document.vue")
+    },
+    {
       path: "/support",
       components: require("./containers/Support.vue")
     },
