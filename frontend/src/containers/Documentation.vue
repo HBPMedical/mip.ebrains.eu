@@ -22,8 +22,6 @@
         </b-list-group>
         <b-list-group flush>
           <b-list-group-item
-            action
-            class="documentation-list"
             v-for="article in categorie.articles"
             :key="article.id"
             :title="article.title"
