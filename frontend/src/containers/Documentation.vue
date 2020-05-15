@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <h2>Documentation</h2>
-    <router-link to="/documentation/5">Demo link</router-link>
+    <!--<router-link to="/documentation/5">Demo link</router-link>-->
     <b-card-group deck>
       <b-card
         v-for="categorie in documentcategories"
@@ -27,10 +27,7 @@
             v-for="article in categorie.articles"
             :key="article.id"
             :title="article.title"
-            v-on:click="
-              displaytitle = article.title;
-              displaycontent = article.content;
-            "
+            :to="here + '/' + article.document_category.name + '/' + article.title"
           >
             {{ article.title }}
           </b-list-group-item>
@@ -68,27 +65,17 @@
         </b-list-group>
       </b-card>
     </b-card-group>
-    <b-card id="display">
-      <h3>{{ displaytitle }}</h3>
-      <vue-markdown-it
-        v-if="displaycontent"
-        :source="displaycontent"
-        id="editor"
-      />
-    </b-card>
   </b-container>
 </template>
 
 <script>
-import VueMarkdownIt from "vue-markdown-it";
 import gql from "graphql-tag";
 
 export default {
   data() {
     return {
       documentcategories: {},
-      displaycontent: "",
-      displaytitle: "",
+      here: this.$route.path,
       api_url: process.env.VUE_APP_STRAPI_API_URL,
     };
   },
@@ -118,6 +105,9 @@ export default {
             id
             title
             content
+            document_category {
+              name
+            }
             image {
               url
             }
@@ -125,9 +115,6 @@ export default {
         }
       }
     `,
-  },
-  components: {
-    VueMarkdownIt,
   },
 };
 </script>

@@ -33,7 +33,15 @@ const router = new VueRouter({
     },
     {
       path: "/documentation",
-      components: require("./containers/Documentation.vue")
+      components: require("./containers/Documentation.vue"),
+    },
+    {
+      path: "/documentation/:articlecategory",
+      components: require("./containers/Document.vue"),
+    },
+    {
+      path: "/documentation/:articlecategory/:articletitle",
+      components: require("./containers/Document.vue"),
     },
     {
       path: "/documentation/:id",
