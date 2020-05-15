@@ -9,11 +9,11 @@
         items: [
           {
             text: 'Documentation',
-            href: '/documentation'
+            to: '/documentation'
           },
                     {
             text: this.$route.params.articlecategory,
-            href: '/documentation' + '/' + this.$route.params.articlecategory
+            to: '/documentation' + '/' + this.$route.params.articlecategory
           },
           {
             text: this.$route.params.articletitle,
