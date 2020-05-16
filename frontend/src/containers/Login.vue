@@ -21,8 +21,9 @@ export default {
   apollo: {
     categories: gql`
       query {
-        categories(where: { name_contains: "developer" }) {
+        categories(where: { name_contains: "login" }) {
           name
+          description
           media {
             url
           }

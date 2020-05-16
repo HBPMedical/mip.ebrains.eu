@@ -13,8 +13,22 @@
       "type": "string"
     },
     "articles": {
-      "via": "category",
-      "collection": "article"
+      "collection": "article",
+      "via": "category"
+    },
+    "media": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

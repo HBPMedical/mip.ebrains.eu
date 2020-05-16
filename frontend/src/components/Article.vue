@@ -1,24 +1,21 @@
 <template>
-  <b-container>
-    <b-row>
-      <b-col>
-        <h2>{{ article.title }}</h2>
-        <b-img
-          v-if="article.image"
-          :src="api_url + article.image.url"
-          fluid
-          width="400px"
-          right
-          :alt="article.title"
-        ></b-img>
-        <vue-markdown-it
-          v-if="article.content"
-          :source="article.content"
-          id="editor"
-        />
-      </b-col>
-    </b-row>
-  </b-container>
+  <div class="d-flex align-items-start justify-content-between">
+    <div>
+      <h2>{{ article.title }}</h2>
+      <vue-markdown-it
+        v-if="article.content"
+        :source="article.content"
+        id="editor"
+      />
+    </div>
+    <b-img
+      v-if="article.image"
+      :src="api_url + article.image.url"
+      width="400px"
+      right
+      :alt="article.title"
+    ></b-img>
+  </div>
 </template>
 
 <script>
@@ -38,7 +35,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-
-</style>

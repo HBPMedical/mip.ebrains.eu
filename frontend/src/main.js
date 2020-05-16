@@ -11,6 +11,7 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './assets/main.css'
 
 import App from "./App.vue";
 
@@ -56,8 +57,8 @@ const router = new VueRouter({
       components: require("./containers/Developer.vue")
     },
     {
-      path: "/federation",
-      components: require("./containers/Federation.vue")
+      path: "/login",
+      components: require("./containers/Login.vue")
     }
   ],
 });

@@ -1,6 +1,6 @@
 <template>
-  <b-container>
-    <h2>Documentation</h2>
+  <b-container class="content">
+    <h1>Documentation</h1>
     <!--<router-link to="/documentation/5">Demo link</router-link>-->
     <b-card-group deck>
       <b-card
@@ -27,7 +27,9 @@
             v-for="article in categorie.articles"
             :key="article.id"
             :title="article.title"
-            :to="here + '/' + article.document_category.name + '/' + article.title"
+            :to="
+              here + '/' + article.document_category.name + '/' + article.title
+            "
           >
             {{ article.title }}
           </b-list-group-item>

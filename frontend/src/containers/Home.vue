@@ -64,6 +64,7 @@ export default {
 .header-card h1 {
   font-size: 4rem;
   font-weight: bolder;
+  color: white;
 }
 
 .header-card p {

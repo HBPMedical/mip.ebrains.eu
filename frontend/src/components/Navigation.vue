@@ -123,9 +123,7 @@
         >
         <!-- <router-link tag="b-nav-item" to="/support">Support</router-link> -->
         <router-link tag="b-nav-item" to="/developer">Developer</router-link>
-        <router-link tag="b-nav-item" to="/federation"
-          >Federated MIP login</router-link
-        >
+        <router-link tag="b-nav-item" to="/login">Login to the MIP</router-link>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -138,9 +136,9 @@ export default {
 </script>
 
 <style scoped>
-
-.main-navbar{
+.main-navbar {
   border-bottom: 1px silver solid;
+  background-color: rgb(0, 0, 0, 0.2);
 }
 
 svg.ebrains-logo-web {
