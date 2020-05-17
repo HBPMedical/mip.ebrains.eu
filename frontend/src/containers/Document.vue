@@ -3,23 +3,19 @@
     <div>
       <Breadcrumb />
       <div class="d-flex align-items-start justify-content-between">
-        <div>
-          <h2>{{ document.title }}</h2>
-          <vue-markdown-it
-            v-if="document.content"
-            :source="document.content"
-            id="editor"
-          />
+        <h2>{{ document.title }}</h2>
+        <div v-if="document.media.url" style="margin: 1.5rem 0 1rem 0;">
+          <a :href="api_url + document.media.url" :alt="document.title"
+            >Download PDF</a
+          >
         </div>
-        <b-img
-          v-if="document.media"
-          :src="api_url + document.media.url"
-          width="400px"
-          right
-          :alt="document.title"
-        ></b-img>
       </div>
     </div>
+    <vue-markdown-it
+      v-if="document.content"
+      :source="document.content"
+      id="editor"
+    />
   </b-container>
 </template>
 
@@ -33,6 +29,7 @@ export default {
     return {
       api_url: process.env.VUE_APP_STRAPI_API_URL,
       document,
+      routeParam: this.$route.params.documentid,
     };
   },
   components: {
@@ -40,18 +37,25 @@ export default {
     VueMarkdownIt,
   },
   apollo: {
-    document: gql`
-      query Document {
-        document(id: 1) {
-          id
-          title
-          content
-          media {
-            url
+    document: {
+      query: gql`
+        query Document($id: ID!) {
+          document(id: $id) {
+            id
+            title
+            content
+            media {
+              url
+            }
           }
         }
-      }
-    `,
+      `,
+      variables() {
+        return {
+          id: this.routeParam,
+        };
+      },
+    },
   },
 };
 </script>

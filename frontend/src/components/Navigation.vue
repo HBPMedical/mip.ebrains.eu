@@ -112,7 +112,8 @@
             ></path>
           </g>
         </g></svg
-    ></router-link>
+    >
+    <h1>The Medical Informatics Platform</h1></router-link>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
@@ -138,7 +139,13 @@ export default {
 <style scoped>
 .main-navbar {
   border-bottom: 1px silver solid;
-  background-color: rgb(0, 0, 0, 0.2);
+  background-color: rgba(73, 33, 33, 0.2);
+}
+ #app nav h1 {
+  font-weight:bold;
+  font-size: 1rem;
+  display: inline;
+  margin: 0 0 0 1rem;
 }
 
 svg.ebrains-logo-web {

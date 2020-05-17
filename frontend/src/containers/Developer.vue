@@ -6,7 +6,7 @@
 
 <script>
 import gql from "graphql-tag";
-import Category from '../components/Category.vue'
+import Category from "../components/Category.vue";
 
 export default {
   components: {

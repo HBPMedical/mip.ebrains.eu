@@ -1,5 +1,5 @@
 <template>
-  <b-container class="content">
+  <div>
     <div v-for="category in categories" :key="category.id">
       <b-card
         overlay
@@ -22,7 +22,7 @@
         :article="article"
       />
     </div>
-  </b-container>
+  </div>
 </template>
 
 <script>

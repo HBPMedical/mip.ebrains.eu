@@ -1,49 +1,44 @@
 <template>
   <b-container class="content">
     <h1>Documentation</h1>
-    <!--<router-link to="/documentation/5">Demo link</router-link>-->
     <b-card-group deck>
       <b-card
         v-for="category in documentcategories"
         :key="category.id"
         :title="category.name"
+        :img-src="api_url + category.image.url"
+        :img-alt="category.name"
+        img-top
+        style="max-width: 20rem;"
         class="mb-2"
       >
+      
         <b-list-group flush>
           <b-list-group-item
             v-for="document in category.documents"
             :key="document.id"
-            :title="document.title"
-            :to="'/documentation/' + category.name + '/' + document.id"
           >
-            {{ document.title }}
-          </b-list-group-item>
-        </b-list-group>
-        <!-- <b-list-group flush>
-          <b-list-group-item
-            v-for="article in categorie.articles"
-            :key="article.id"
-            :title="article.title"
-            :to="
-              here + '/' + article.document_category.name + '/' + article.title
-            "
-          >
-            {{ article.title }}
+            <router-link
+              :to="'/documentation/' + category.name + '/' + document.id"
+              class="card-link"
+            >
+              {{ document.title }}
+            </router-link>
           </b-list-group-item>
         </b-list-group>
         <b-list-group flush>
           <b-list-group-item
             action
             class="documentation-list"
-            v-for="video in categorie.videos"
+            v-for="video in category.videos"
             :key="video.id"
             :title="video.title"
             @click="$bvModal.show(video.id)"
           >
-            {{ video.title }}
+            <a class="card-link">{{ video.title }}</a>
           </b-list-group-item>
           <b-modal
-            v-for="video in categorie.videos"
+            v-for="video in category.videos"
             :key="`list-${video.id}`"
             :id="video.id"
             :title="video.title"
@@ -61,7 +56,7 @@
               ></iframe>
             </div>
           </b-modal>
-        </b-list-group> -->
+        </b-list-group>
       </b-card>
     </b-card-group>
   </b-container>
@@ -94,22 +89,11 @@ export default {
               url
             }
           }
-          # videos(sort: "order:asc") {
-          #   id
-          #   title
-          #   source
-          # }
-          # articles(sort: "order:asc") {
-          #   id
-          #   title
-          #   content
-          #   document_category {
-          #     name
-          #   }
-          #   image {
-          #     url
-          #   }
-          # }
+          videos(sort: "order:asc") {
+            id
+            title
+            source
+          }
         }
       }
     `,
@@ -121,9 +105,18 @@ export default {
 .card {
   margin-top: 16px;
 }
+
+.card-link {
+  color: #007bff;
+}
 .documentation-list {
   cursor: pointer;
 }
+
+.list-group-item {
+  padding: 0.75rem 0;
+}
+
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
