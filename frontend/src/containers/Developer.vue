@@ -1,6 +1,6 @@
 <template>
   <b-container class="content">
-    <h1 v-if="page.title">{{ page.title }}</h1>
+    <h1 v-if="page">{{ page.title }}</h1>
     <Page v-if="page" :page="page" />
   </b-container>
 </template>

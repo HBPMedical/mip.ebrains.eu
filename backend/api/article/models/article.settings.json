@@ -30,16 +30,8 @@
     "published": {
       "type": "datetime"
     },
-    "category": {
-      "via": "articles",
-      "model": "category"
-    },
     "order": {
       "type": "integer"
-    },
-    "document_category": {
-      "via": "articles",
-      "model": "documentcategory"
     }
   }
 }

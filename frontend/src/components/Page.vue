@@ -8,7 +8,7 @@
       />
     </div>
     <b-img
-      v-if="page.image.url"
+      v-if="page.image"
       :src="api_url + page.image.url"
       width="320px"
       right

@@ -1,8 +1,13 @@
 <template>
   <b-container class="content">
-    <h1 v-if="page.title">{{ page.title }}</h1>
+    <h1 v-if="page">{{ page.title }}</h1>
+    <a
+      style="margin: 1rem 0;"
+      class="btn btn-primary"
+      href="https://mip.humanbrainproject.eu"
+      >Log In</a
+    >
     <Page v-if="page" :page="page" />
-    <a class="btn btn-primary" href="https://mip.humanbrainproject.eu">Log In</a>
   </b-container>
 </template>
 
@@ -35,4 +40,3 @@ export default {
   },
 };
 </script>
-

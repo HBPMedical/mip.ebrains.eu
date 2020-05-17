@@ -33,10 +33,6 @@
     "videos": {
       "collection": "video",
       "via": "documentcategory"
-    },
-    "articles": {
-      "collection": "article",
-      "via": "document_category"
     }
   }
 }
