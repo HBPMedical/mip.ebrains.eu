@@ -4,23 +4,22 @@
     <!--<router-link to="/documentation/5">Demo link</router-link>-->
     <b-card-group deck>
       <b-card
-        v-for="categorie in documentcategories"
-        :key="categorie.id"
-        :title="categorie.name"
+        v-for="category in documentcategories"
+        :key="category.id"
+        :title="category.name"
         class="mb-2"
       >
         <b-list-group flush>
           <b-list-group-item
-            v-for="document in categorie.documents"
+            v-for="document in category.documents"
             :key="document.id"
             :title="document.title"
-            :href="api_url + document.content.url"
-            target="_blank"
+            :to="'/documentation/' + category.name + '/' + document.id"
           >
             {{ document.title }}
           </b-list-group-item>
         </b-list-group>
-        <b-list-group flush>
+        <!-- <b-list-group flush>
           <b-list-group-item
             v-for="article in categorie.articles"
             :key="article.id"
@@ -62,7 +61,7 @@
               ></iframe>
             </div>
           </b-modal>
-        </b-list-group>
+        </b-list-group> -->
       </b-card>
     </b-card-group>
   </b-container>
@@ -91,27 +90,26 @@ export default {
           documents(sort: "order:asc") {
             id
             title
-
-            content {
+            media {
               url
             }
           }
-          videos(sort: "order:asc") {
-            id
-            title
-            source
-          }
-          articles(sort: "order:asc") {
-            id
-            title
-            content
-            document_category {
-              name
-            }
-            image {
-              url
-            }
-          }
+          # videos(sort: "order:asc") {
+          #   id
+          #   title
+          #   source
+          # }
+          # articles(sort: "order:asc") {
+          #   id
+          #   title
+          #   content
+          #   document_category {
+          #     name
+          #   }
+          #   image {
+          #     url
+          #   }
+          # }
         }
       }
     `,

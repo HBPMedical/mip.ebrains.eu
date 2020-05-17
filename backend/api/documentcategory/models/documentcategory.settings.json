@@ -16,8 +16,8 @@
       "type": "integer"
     },
     "documents": {
-      "collection": "document",
-      "via": "documentcategory"
+      "via": "documentcategory",
+      "collection": "document"
     },
     "image": {
       "model": "file",

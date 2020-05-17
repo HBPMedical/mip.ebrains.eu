@@ -15,7 +15,7 @@
     "order": {
       "type": "integer"
     },
-    "content": {
+    "media": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -27,8 +27,11 @@
       "required": false
     },
     "documentcategory": {
-      "via": "documents",
-      "model": "documentcategory"
+      "model": "documentcategory",
+      "via": "documents"
+    },
+    "content": {
+      "type": "richtext"
     }
   }
 }
