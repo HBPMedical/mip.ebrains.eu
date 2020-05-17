@@ -4,7 +4,7 @@
       <Breadcrumb />
       <div class="d-flex align-items-start justify-content-between">
         <h2>{{ document.title }}</h2>
-        <div v-if="document.media.url" style="margin: 1.5rem 0 1rem 0;">
+        <div v-if="document.media" style="margin: 1.5rem 0 1rem 0;">
           <a :href="api_url + document.media.url" :alt="document.title"
             >Download PDF</a
           >
