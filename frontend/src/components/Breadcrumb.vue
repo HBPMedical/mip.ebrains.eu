@@ -12,8 +12,8 @@ export default {
           to: "/documentation",
         },
         {
-          text: this.$route.params.articlecategory,
-          to: "/documentation" + "/" + this.$route.params.articlecategory,
+          text: this.$route.params.homepagecategory,
+          to: "/documentation" + "/" + this.$route.params.homepagecategory,
         },
       ],
     };

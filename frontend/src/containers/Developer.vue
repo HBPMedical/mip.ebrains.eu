@@ -1,16 +1,17 @@
 <template>
   <b-container class="content">
-    <Category :categories="categories" />
+    <h1 v-if="page.title">{{ page.title }}</h1>
+    <Page v-if="page" :page="page" />
   </b-container>
 </template>
 
 <script>
 import gql from "graphql-tag";
-import Category from "../components/Category.vue";
+import Page from "../components/Page.vue";
 
 export default {
   components: {
-    Category,
+    Page,
   },
   data() {
     return {
@@ -19,20 +20,14 @@ export default {
     };
   },
   apollo: {
-    categories: gql`
+    page: gql`
       query {
-        categories(where: { name_contains: "developer" }) {
-          name
-          media {
+        page(id: 1) {
+          title
+          image {
             url
           }
-          articles {
-            title
-            content
-            image {
-              url
-            }
-          }
+          content
         }
       }
     `,
@@ -40,10 +35,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.image-hero {
-  width: 100%;
-  height: 240px;
-  margin-bottom: 3rem;
-}
-</style>

@@ -1,34 +1,37 @@
 <template>
   <b-container class="content">
-    <div id="feedback-form" />
+    <h1 v-if="page.title">{{ page.title }}</h1>
+    <Page v-if="page" :page="page" />
   </b-container>
 </template>
 
 <script>
+import gql from "graphql-tag";
+import Page from "../components/Page.vue";
 
-// window.addEventListener("load", function() {
-//   var script = document.createElement("script");
-//   script.src = "https://support.humanbrainproject.eu/assets/form/form.js";
-//   script.id = "zammad_form_script";
-//   document.body.appendChild(script);
-
-//   script.addEventListener("load", function() {
-//     $(function() {
-//       $("#feedback-form").ZammadForm({
-//         messageTitle: "Feedback Form",
-//         messageSubmit: "Submit",
-//         messageThankYou:
-//           "Thank you for your inquiry (#%s)! We will contact you as soon as possible.",
-//       });
-//     });
-//     setTimeout(function() {
-//       var preselect = document.querySelector(
-//         '[name="hbp-category"] option[value="Medical Informatics"]'
-//       );
-//       preselect.selected = "selected";
-//     }, 200);
-//   });
-// });
-
-export default {};
+export default {
+  components: {
+    Page,
+  },
+  data() {
+    return {
+      api_url: process.env.VUE_APP_STRAPI_API_URL,
+      categories: [],
+    };
+  },
+  apollo: {
+    page: gql`
+      query {
+        page(id: 3) {
+          title
+          image {
+            url
+          }
+          content
+        }
+      }
+    `,
+  },
+};
 </script>
+

@@ -33,7 +33,6 @@ export default {
     articles: gql`
       query Articles {
         articles(
-          where: { category: { name_contains: "about" } }
           sort: "order:asc"
         ) {
           id
