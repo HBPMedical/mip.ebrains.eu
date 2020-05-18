@@ -69,7 +69,6 @@ export default {
   data() {
     return {
       documentcategories: {},
-      here: this.$route.path,
       api_url: process.env.VUE_APP_STRAPI_API_URL,
     };
   },
