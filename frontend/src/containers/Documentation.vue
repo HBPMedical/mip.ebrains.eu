@@ -1,6 +1,8 @@
 <template>
   <b-container class="content">
     <h1>Documentation</h1>
+        <div class="border-mip"></div>
+
     <b-card-group deck>
       <b-card
         v-for="category in documentcategories"
@@ -108,6 +110,7 @@ export default {
 .card-link {
   color: #007bff;
 }
+
 .documentation-list {
   cursor: pointer;
 }

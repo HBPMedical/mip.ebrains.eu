@@ -8,7 +8,9 @@
         <h1>The Medical Informatics Platform</h1>
         <p>Secure federated analysis on clinical data</p>
       </div>
+      
     </b-container>
+    <div class="border-mip"></div>
     <b-container class="content">
       <Tabs :articles="articles"></Tabs>
     </b-container>
@@ -48,7 +50,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .header {
   background: no-repeat top/100% url("~@/assets/system-2660914_1920.jpg");
   height: 20rem;
@@ -72,7 +74,6 @@ export default {
 }
 
 .content {
-  background-color: rgba(255, 255, 255, 0.432);
   margin-top: 2rem;
 }
 </style>

@@ -1,12 +1,16 @@
 <template>
   <b-container class="content">
-    <h1 v-if="page">{{ page.title }}</h1>
-    <a
-      style="margin: 1rem 0;"
-      class="btn btn-primary"
-      href="https://mip.humanbrainproject.eu"
-      >Log In</a
-    >
+    <div class="d-flex align-items-start justify-content-between">
+      <h1 v-if="page">{{ page.title }}</h1>
+      <div class="login-btn">
+        <a
+          style="margin: 1rem 0;"
+          class="btn btn-primary"
+          href="https://mip.humanbrainproject.eu"
+          >Log In</a
+        >
+      </div>
+    </div>
     <Page v-if="page" :page="page" />
   </b-container>
 </template>
@@ -40,3 +44,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.login-btn {
+  margin-top: 1rem;
+}
+</style>

@@ -13,6 +13,7 @@
       :src="api_url + article.image.url"
       width="400px"
       right
+      class="article-img"
       :alt="article.title"
     ></b-img>
   </div>
@@ -35,3 +36,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+h2 {
+  padding-top: 0;
+}
+
+.article-img {
+  margin-top: 0.5rem;
+}
+</style>

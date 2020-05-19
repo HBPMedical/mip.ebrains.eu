@@ -30,8 +30,8 @@
           <b-nav-text>
             <a href="https://twitter.com/HBPMedical" target="_blank"
               ><img
-                width="32px"
-                height="32px"
+                width="24px"
+                height="px"
                 src="~@/assets/twitter-logo.png"
                 alt="Twitter Logo"/></a
           ></b-nav-text>
@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .footer {
   height: 44px;
   border-top: 1px silver solid;
@@ -54,4 +54,5 @@
 .navbar-text {
   font-size: 0.8rem;
 }
+
 </style>
