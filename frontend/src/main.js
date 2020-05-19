@@ -1,24 +1,17 @@
 import "@babel/polyfill";
 import "mutationobserver-shim";
 import Vue from "vue";
-import "./plugins/bootstrap-vue";
 import VueApollo from "vue-apollo";
 import VueRouter from "vue-router";
-
 import apolloClient from "./vue-apollo";
 
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
+import "./plugins/bootstrap-vue";
 import "./assets/main.css";
 
 import App from "./App.vue";
 
 Vue.use(VueApollo);
 Vue.use(VueRouter);
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
 Vue.config.productionTip = false;
 
 const apolloProvider = new VueApollo({
