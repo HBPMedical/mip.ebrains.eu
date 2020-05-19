@@ -1,8 +1,6 @@
 <template>
   <b-container class="content">
     <h1>Documentation</h1>
-        <div class="border-mip"></div>
-
     <b-card-group deck>
       <b-card
         v-for="category in documentcategories"
@@ -14,7 +12,6 @@
         style="max-width: 20rem;"
         class="mb-2"
       >
-      
         <b-list-group flush>
           <b-list-group-item
             v-for="document in category.documents"
@@ -124,6 +121,7 @@ export default {
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
 }
+
 .videoWrapper iframe {
   position: absolute;
   top: 0;
