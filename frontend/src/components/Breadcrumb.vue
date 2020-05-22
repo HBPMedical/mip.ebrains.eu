@@ -21,7 +21,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .breadcrumb {
   background-color: white;
   border-bottom: 1px silver solid;

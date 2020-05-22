@@ -15,6 +15,7 @@
       v-if="document.content"
       :source="document.content"
       id="editor"
+      class="document-markdown"
     />
   </b-container>
 </template>
@@ -59,3 +60,43 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.document-markdown >>> h1,
+.document-markdown >>> h2,
+.document-markdown >>> h3,
+.document-markdown >>> h4,
+.document-markdown >>> h5,
+.document-markdown >>> h6 {
+  color: #000;
+  margin: 1rem 0 0.5rem 0;
+  padding: 0;
+  font-weight: 900;
+}
+
+.document-markdown >>> h1 {
+  font-size: 1.5rem;
+}
+
+.document-markdown >>> h2 {
+  font-size: 1.3rem;
+}
+
+.document-markdown >>> h3 {
+  font-size: 1.2rem;
+}
+
+.document-markdown >>> h4 {
+  font-size: 1.1rem;
+}
+
+.document-markdown >>> p {
+  margin: 0;
+  padding: 0;
+}
+
+.document-markdown >>> .table td,
+.document-markdown >>> .table th {
+      padding: .4rem;
+}
+</style>
