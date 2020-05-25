@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-items-start justify-content-between">
+  <div class="d-lg-flex align-items-start justify-content-between">
     <div>
       <h2>{{ article.title }}</h2>
       <vue-markdown-it

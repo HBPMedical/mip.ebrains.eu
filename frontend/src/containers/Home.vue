@@ -52,7 +52,7 @@ export default {
 
 <style scoped>
 .header {
-  background: no-repeat top/100% url("~@/assets/system-2660914_1920.jpg");
+  background: no-repeat top/cover url("~@/assets/system-2660914_1920.jpg");
   height: 20rem;
 }
 

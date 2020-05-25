@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-items-start justify-content-between">
+  <div class="d-lg-flex align-items-start justify-content-between">
     <div>
       <vue-markdown-it
         v-if="page.content"
