@@ -13,6 +13,7 @@
       width="320px"
       right
       :alt="page.title"
+      class="page-img"
     ></b-img>
   </div>
 </template>
@@ -34,3 +35,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.page-img {
+  margin-top: 0.5rem;
+  margin-bottom: 50px;
+}
+</style>

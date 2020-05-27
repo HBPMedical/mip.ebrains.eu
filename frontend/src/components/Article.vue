@@ -44,5 +44,6 @@ h2 {
 
 .article-img {
   margin-top: 0.5rem;
+  margin-bottom: 50px;
 }
 </style>
