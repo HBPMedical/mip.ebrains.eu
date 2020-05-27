@@ -130,4 +130,8 @@ export default {
   height: 100%;
   border: none;
 }
+
+.content {
+  margin-bottom: 50px;
+}
 </style>
