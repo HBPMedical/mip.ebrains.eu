@@ -26,17 +26,17 @@
             >. All right reserved</b-nav-text
           >
         </b-navbar-nav>
-        <b-navbar-nav class="ml-auto">
-          <b-nav-text>
-            <a href="https://twitter.com/HBPMedical" target="_blank"
-              ><img
-                width="24px"
-                height="px"
-                src="~@/assets/twitter-logo.png"
-                alt="Twitter Logo"/></a
-          ></b-nav-text>
-        </b-navbar-nav>
       </b-collapse>
+
+      <b-navbar-nav class="ml-auto">
+        <b-nav-text>
+          <a href="https://twitter.com/HBPMedical" target="_blank"
+            ><img
+              width="24px"
+              src="~@/assets/twitter-logo.png"
+              alt="Twitter Logo"/></a
+        ></b-nav-text>
+      </b-navbar-nav>
     </b-navbar>
   </div>
 </template>
