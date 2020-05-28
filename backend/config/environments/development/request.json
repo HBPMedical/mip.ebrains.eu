@@ -18,6 +18,11 @@
   },
   "parser": {
     "enabled": true,
-    "multipart": true
+    "multipart": true,
+    "formLimit": "5mb",
+    "jsonLimit": "5mb",
+    "markdown-it": {
+      "maxFileSize": 524288000
+    }
   }
 }
