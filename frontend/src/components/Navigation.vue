@@ -129,9 +129,13 @@
           >
           <router-link tag="b-nav-item" to="/support">Support</router-link>
           <router-link tag="b-nav-item" to="/developer">Developer</router-link>
-          <router-link tag="b-nav-item" to="/login"
-            >Login to the MIP</router-link
-          >
+          <div class="login-btn">
+            <a
+              class="btn btn-primary"
+              href="https://mip.humanbrainproject.eu"
+            >Log In</a
+            >
+          </div>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
