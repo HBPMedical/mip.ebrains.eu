@@ -7,7 +7,7 @@
       sticky
       class="main-navbar"
     >
-      <router-link tag="a" to="/" class="navbar-brand"
+      <a href="https://www.ebrains.eu" class="navbar-brand"
         ><svg
           width="40"
           height="40"
@@ -114,8 +114,11 @@
             </g>
           </g>
         </svg>
-        <h1>The Medical Informatics Platform</h1></router-link
+        </a
       >
+      <router-link tag="a" to="/" class="navbar-brand">
+       <h1>The Medical Informatics Platform</h1>
+      </router-link>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
