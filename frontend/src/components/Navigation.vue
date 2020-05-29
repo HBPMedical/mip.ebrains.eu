@@ -7,7 +7,7 @@
       sticky
       class="main-navbar"
     >
-      <a href="https://www.ebrains.eu" class="navbar-brand"
+      <a href="https://www.ebrains.eu" class="navbar-brand" target="_blank"
         ><svg
           width="40"
           height="40"
@@ -133,6 +133,7 @@
             <a
               class="btn btn-primary"
               href="https://mip.humanbrainproject.eu"
+              target="_blank"
             >Log In</a
             >
           </div>
