@@ -114,10 +114,9 @@
             </g>
           </g>
         </svg>
-        </a
-      >
+      </a>
       <router-link tag="a" to="/" class="navbar-brand">
-       <h1>The Medical Informatics Platform</h1>
+        <h1>The Medical Informatics Platform</h1>
       </router-link>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -129,18 +128,10 @@
           >
           <router-link tag="b-nav-item" to="/support">Support</router-link>
           <router-link tag="b-nav-item" to="/developer">Developer</router-link>
-          <div class="login-btn">
-            <a
-              class="btn btn-primary"
-              href="https://mip.humanbrainproject.eu"
-              target="_blank"
-            >Log In</a
-            >
-          </div>
+          <router-link tag="a" style="margin-left: 1rem" class="btn btn-primary" to="/login">Log In</router-link>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-  
   </div>
 </template>
 
@@ -155,7 +146,6 @@ export default {
   border-bottom: 1px silver solid;
   background-color: rgba(73, 33, 33, 0.2);
 }
-
 
 #app nav h1 {
   font-weight: bold;
