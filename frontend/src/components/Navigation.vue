@@ -7,7 +7,7 @@
       sticky
       class="main-navbar"
     >
-      <a href="https://www.ebrains.eu" class="navbar-brand" target="_blank"
+      <a href="https://www.ebrains.eu" class="navbar-brand"
         ><svg
           width="40"
           height="40"
@@ -33,7 +33,7 @@
               <stop offset="1" stop-color="#127e7a"></stop>
             </linearGradient>
           </defs>
-          <title>EBRAINS logo web 1.0</title>
+          <title>EBRAINS logo</title>
           <g>
             <polyline
               points="101.6 0 50.9 13.9 13.9 51.2 0.5 102.1 14.4 152.8 51.3 189.6 102.1 205.2 153.3 189.3 190.1 152.4 203.7 101.1 189.8 50.3 152.4 13.4 101.6 0"
@@ -116,7 +116,7 @@
         </svg>
       </a>
       <router-link tag="a" to="/" class="navbar-brand">
-        <h1>The Medical Informatics Platform</h1>
+        <h1>MIP - Medical Informatics Platform</h1>
       </router-link>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -128,7 +128,13 @@
           >
           <router-link tag="b-nav-item" to="/support">Support</router-link>
           <router-link tag="b-nav-item" to="/developer">Developer</router-link>
-          <router-link tag="a" style="margin-left: 1rem" class="btn btn-primary" to="/login">Log In</router-link>
+          <router-link
+            tag="a"
+            style="margin-left: 1rem"
+            class="btn btn-info"
+            to="/access"
+            >Access</router-link
+          >
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

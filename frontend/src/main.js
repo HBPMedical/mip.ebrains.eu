@@ -45,6 +45,10 @@ const router = new VueRouter({
       path: "/login",
       components: require("./containers/Login.vue"),
     },
+    {
+      path: "/access",
+      components: require("./containers/Login.vue"),
+    },
   ],
 });
 
