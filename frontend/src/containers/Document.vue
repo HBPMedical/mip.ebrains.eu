@@ -2,10 +2,11 @@
   <b-container>
     <div>
       <Breadcrumb />
-      <div class="d-flex align-items-start justify-content-between">
+      <div>
         <h2>{{ document.title }}</h2>
-        <div v-if="document.media" style="margin: 1.5rem 0 1rem 0;">
+        <div v-if="document.media" style="margin-bottom: 1rem">
           <a :href="api_url + document.media.url" :alt="document.title"
+            ><b-icon class="h2 mb-0" icon="file-earmark-arrow-down"></b-icon
             >Download PDF</a
           >
         </div>
@@ -17,6 +18,12 @@
       id="editor"
       class="document-markdown"
     />
+    <b-img
+      v-else
+      fluid
+      style="margin-top: 2rem"
+      src="~@/assets/system-2660914_1920.jpg"
+    ></b-img>
   </b-container>
 </template>
 
@@ -97,6 +104,6 @@ export default {
 
 .document-markdown >>> .table td,
 .document-markdown >>> .table th {
-      padding: .4rem;
+  padding: 0.4rem;
 }
 </style>
