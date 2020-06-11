@@ -1,58 +1,45 @@
 <template>
-  <div>
-    <b-navbar
-      class="footer"
-      fixed="bottom"
-      toggleable="sm"
-      type="white"
-      variant="white"
-    >
-      <b-navbar-brand>
-        <a href="https://www.chuv.ch/" target="_blank"
-          ><img
-            src="~@/assets/logo_chuv.png"
-            alt="CHUV logo"
-            width="59px"
-            height="31px"
-        /></a>
-      </b-navbar-brand>
-
-      <b-collapse id="nav-text-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-text>
-            © 2015-2020
-            <a href="https://www.ebrains.eu" target="_blank"
-              >Human Brain Project</a
-            >. All right reserved</b-nav-text
-          >
-        </b-navbar-nav>
-      </b-collapse>
-
-      <b-navbar-nav class="ml-auto">
-        <b-nav-text>
-          <a href="https://twitter.com/HBPMedical" target="_blank"
-            ><img
-              width="24px"
-              src="~@/assets/twitter-logo.png"
-              alt="Twitter Logo"/></a
-        ></b-nav-text>
+  <b-navbar
+    class="footer"
+    toggleable="sm"
+    type="white"
+    variant="white"
+    fixed="bottom"
+  >
+    <b-collapse id="nav-text-collapse" is-nav>
+      <b-navbar-nav>
+        <b-nav-text> Copyright © 2019 EBRAINS. All rights reserved.</b-nav-text>
       </b-navbar-nav>
-    </b-navbar>
-  </div>
+    </b-collapse>
+
+    <b-navbar-nav class="ml-auto">
+      <img
+        src="~@/assets/hbp-logo.png"
+        alt="HBP logo"
+        width="60px"
+        height="60px"
+      />
+      <img
+        src="~@/assets/eu-fund-logo.png"
+        alt="HBP logo"
+        width="250px"
+        height="60px"
+      />
+    </b-navbar-nav>
+  </b-navbar>
 </template>
 
 <style scoped>
 .footer {
-  height: 44px;
-  border-top: 1px silver solid;
+  height: 70px;
+  border-top: 1px #f0f0f0 solid;
+  background-color: #f5f5f5;
 }
 
-.navbar-brand {
-  margin-left: 2rem;
+img {
+  margin-right: 1rem;
 }
-
 .navbar-text {
   font-size: 0.8rem;
 }
-
 </style>
