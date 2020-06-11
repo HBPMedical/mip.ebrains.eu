@@ -4,7 +4,6 @@
     toggleable="sm"
     type="white"
     variant="white"
-    fixed="bottom"
   >
     <b-collapse id="nav-text-collapse" is-nav>
       <b-navbar-nav>
@@ -34,6 +33,7 @@
   height: 70px;
   border-top: 1px #f0f0f0 solid;
   background-color: #f5f5f5;
+  
 }
 
 img {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navigation />
-    <router-view :key="$route.fullPath"></router-view>
+    <router-view :key="$route.fullPath" class="content"></router-view>
     <Footer />
   </div>
 </template>
@@ -15,3 +15,16 @@ export default {
   components: { Footer, Navigation },
 };
 </script>
+
+<style scoped>
+#app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content {
+  flex-grow: 1;
+}
+</style>
