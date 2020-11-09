@@ -73,7 +73,4 @@ export default {
   font-weight: bolder;
 }
 
-.content {
-  margin-top: 2rem;
-}
 </style>
