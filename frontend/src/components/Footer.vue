@@ -7,7 +7,7 @@
   >
     <b-collapse id="nav-text-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-text> Copyright © 2019 EBRAINS. All rights reserved.</b-nav-text>
+        <b-nav-text> Copyright © 2021 EBRAINS. All rights reserved.</b-nav-text>
       </b-navbar-nav>
     </b-collapse>
 

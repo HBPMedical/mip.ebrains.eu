@@ -12,20 +12,17 @@
     </b-container>
     <div class="border-mip"></div>
     <b-container class="content">
-      <Tabs :articles="articles"></Tabs>
+      <div class="moved">
+        <div>The documentation moved to Github <a href="https://github.com/HBPMedical/mip-docs/">https://github.com/HBPMedical/mip-docs/</a></div>
+      </div>
     </b-container>
   </div>
 </template>
 
 <script>
-import Tabs from "../components/Tabs.vue";
-
 import gql from "graphql-tag";
 
 export default {
-  components: {
-    Tabs,
-  },
   data() {
     return {
       articles: [],
@@ -51,6 +48,13 @@ export default {
 </script>
 
 <style scoped>
+.moved {
+  margin-top: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header {
   background: no-repeat top/cover url("~@/assets/system-2660914_1920.jpg");
   height: 20rem;
