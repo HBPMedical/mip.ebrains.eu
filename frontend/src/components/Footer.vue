@@ -13,17 +13,18 @@
 
     <b-navbar-nav class="ml-auto">
       <img
-        src="~@/assets/hbp-logo.png"
-        alt="HBP logo"
-        width="60px"
-        height="60px"
-      />
-      <img
         src="~@/assets/eu-fund-logo.png"
         alt="HBP logo"
         width="250px"
         height="60px"
       />
+      <img
+        src="~@/assets/hbp-logo.png"
+        alt="HBP logo"
+        width="60px"
+        height="60px"
+      />
+
     </b-navbar-nav>
   </b-navbar>
 </template>
