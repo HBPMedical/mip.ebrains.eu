@@ -46,7 +46,7 @@
         </b-container>
       </section>
       <section id="Federations" data-aos="fade-up">
-        <b-container>
+        <b-container fluid>
           <b-row>
             <b-col cols="12">
               <div class="box">
@@ -58,6 +58,10 @@
                     :title="fed.title"
                     :description="fed.description"
                     :link="fed.link"
+                    :nbRecords="fed.nbRecords"
+                    :nodes="fed.nodes"
+                    :version="fed.version"
+                    :nbNodes="fed.nbNodes"
                   ></card-federation>
                 </div>
               </div>
@@ -65,7 +69,7 @@
           </b-row>
         </b-container>
       </section>
-      <section></section>
+      <section id="Documentation"></section>
     </main>
   </div>
 </template>
@@ -73,8 +77,8 @@
 <script>
 import Logo from "../components/Logo.vue";
 import CardFederation from "../components/CardFederation.vue";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default {
   name: "Home",
@@ -90,9 +94,9 @@ export default {
       federations: [
         {
           title: "Dementia",
-          description: "The dementia federation primarily illustrates the feasibility and value of federating real-world clinical data collected during routine medical practice, representing the full spectrum of patient profiles, in comparison with structured research cohort data from usually biased populations. Three clinical datasets have been curated and harmonized, including real-world clinical data from the Leenaards Memory Centre (CLM) in Lausanne (1032 patients), IRCCS Instituto Centro San Giovanni di Dio Fatebenefratelli in Brescia (1960 patients) and CHU Lille (1102 patients).",
-          available: true,
-          databases: [
+          description:
+            "The dementia federation primarily illustrates the feasibility and value of federating real-world clinical data collected during routine medical practice, representing the full spectrum of patient profiles, in comparison with structured research cohort data from more biased populations. Three clinical datasets have been curated and harmonized, including real-world clinical data from the Leenaards Memory Centre (CLM) in Lausanne (1032 patients), IRCCS Instituto Centro San Giovanni di Dio Fatebenefratelli in Brescia (1960 patients) and CHU Lille (1102 patients), and can be compared to the most well known dementia public database, ADNI.",
+          nodes: [
             "CHUV, Leenaards Memory Centre (Lausanne, Switzerland)",
             "IRCCS Centro San Giovanni di Dio, Fatebenefratelli (Brescia, Italy)",
             "CHU Lille (Lille, France)",
@@ -101,37 +105,33 @@ export default {
           link: "https://dementia.hbpmip.link/",
         },
         {
-          title: "Dementia",
-          description: "",
-          available: true,
-          databases: [
-            "CHUV, Leenaards Memory Centre (Lausanne, Switzerland)",
-            "IRCCS Centro San Giovanni di Dio, Fatebenefratelli (Brescia, Italy)",
-            "CHU Lille (Lille, France)",
+          title: "Traumatic Brain Injury (TBI)",
+          description: "This federation includes representatives from the two largest worldwide TBI research cohorts, CREACTIVE (Collaborative Research on Acute Traumatic brain Injury in intensiVE care medicine in Europe) and Center-TBI, which are part of a major clinical research initiative InTBIR (International Initiative for Traumatic Brain Injury Research), developed in Europe and North-America to tackle the public health issue represented by TBI.",
+          nodes: [
+            "CREACTIVE (stored at the Mario Negri Institute for Pharmacological Research Bergamo, Italy)",
+            "Center-TBI (located at INCF, Karolinska Institute, Stockholm, Sweden)",
           ],
-          nbRecords: 6348,
+          nbRecords: 10500,
+          link: "https://tbi.hbpmip.link/",
         },
         {
-          title: "Dementia",
-          description: "",
-          available: true,
-          databases: [
-            "CHUV, Leenaards Memory Centre (Lausanne, Switzerland)",
-            "IRCCS Centro San Giovanni di Dio, Fatebenefratelli (Brescia, Italy)",
-            "CHU Lille (Lille, France)",
+          title: "Mental Health",
+          description: "The federation aims at exploring large-scale Mental Health datasets including clinical signs and symptoms, together with structured neuropsychological assessments and brain imaging data. Data are derived from a pool of individuals in a longitudinal fashion as part of the IMAGEN database, collected by the Imagen consortium from over 2000 adolescents and their parents.",
+          nodes: [
+            "Universitätsklinikum Aachen (Aachen, Germany)",
+            "CHUV (Centre Hospitalier Universitaire Vaudois, Lausanne, Switzerland)",
           ],
-          nbRecords: 6348,
+          nbRecords: 7300,
+          link: "https://mentalhealth.hbpmip.link/"
         },
         {
-          title: "Dementia",
-          description: "",
-          available: true,
-          databases: [
-            "CHUV, Leenaards Memory Centre (Lausanne, Switzerland)",
-            "IRCCS Centro San Giovanni di Dio, Fatebenefratelli (Brescia, Italy)",
-            "CHU Lille (Lille, France)",
+          title: "Epilepsy",
+          description: "This EBRAINS-embedded federation includes 15 Virtual Machines, assigned to Epilepsy centers from the European Reference Network EpiCARE. Currently data are synthetic, produced from a French national cohort of 1200 patients from 12 different epilepsy centers.",
+          nodes: [
+            "EBRAINS embedded federation of 15 Virtual Machines",
           ],
-          nbRecords: 6348,
+          nbRecords: 5958,
+          nbNodes: 15
         },
       ],
     };
@@ -150,6 +150,11 @@ export default {
 </script>
 
 <style lang="scss">
+
+#Federations, #Documentation {
+  scroll-margin-top: 250px
+}
+
 #placeholder-nav {
   height: 80px;
 }
@@ -166,19 +171,31 @@ section {
       margin-top: 40px;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
       align-content: space-evenly;
       row-gap: 40px;
-      column-gap: 20px;
+      column-gap: 50px;
+      .card-fed {
+        max-width: 30%;
+        width: 25%;
+        
+        @media (max-width: 1200px) { 
+          width: 40%;
+          max-width: 45%;
+        }
+
+        @media (max-width: 768px) { 
+          width: 90%;
+          max-width: 95%;
+        }
+
+
+      }
     }
   }
 
   &#intro {
-    .container {
-      margin-top: 80px;
-    }
-
     .row > div {
       min-height: 400px;
       height: 65vh;

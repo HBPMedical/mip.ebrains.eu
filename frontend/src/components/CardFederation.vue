@@ -1,14 +1,17 @@
 <template>
-  <b-card title="Dementia" class="card-fed">
+  <b-card :title="title" class="card-fed">
     <div class="card-subtitle mb-2 text-muted">
-      <span>
+      <span v-if="nodes" v-b-tooltip.hover :title="nodes.join(' | ')">
         <b-icon-diagram-2></b-icon-diagram-2>
+        {{ (nbNodes ? nbNodes : nodes.length) }}
       </span>
-      <span>
+      <span v-if="nbRecords" v-b-tooltip.hover title="Number of records">
         <b-icon-people-fill></b-icon-people-fill>
+        {{ nbRecords.toLocaleString() }}
       </span>
-      <span>
+      <span v-if="version" v-b-tooltip.hover title="Installed version">
         <b-icon-info-circle></b-icon-info-circle>
+        {{ version }}
       </span>
     </div>
     <b-card-text>
@@ -41,13 +44,11 @@ export default {
   props: {
     title: String,
     description: String,
-    available: {
-      type: Boolean,
-      default: true,
-    },
-    databases: Array,
+    nodes: Array,
     nbRecords: Number,
     link: String,
+    version: String,
+    nbNodes: Number
   },
   data() {
     return {
@@ -59,8 +60,7 @@ export default {
 
 <style lang="scss">
 .card-fed {
-  min-width: 200px;
-  max-width: 30%;
+  min-width: 300px;
   width: 400px;
   background: #ffffff;
   box-shadow: 0px 5px 27px rgba(0, 0, 0, 0.1);
@@ -82,6 +82,10 @@ export default {
     padding: 0;
     font-size: 20px;
     color: black;
+  }
+
+  .card-subtitle span {
+    padding-right: 8px;
   }
 }
 </style>
