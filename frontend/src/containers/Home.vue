@@ -5,8 +5,8 @@
         toggleable="lg"
         type="light"
         variant="white"
-        sticky
         class="main-navbar"
+        fixed="top"
       >
         <b-navbar-brand id="navbar-branding"
           ><span>MIP</span> <Logo />
@@ -22,10 +22,11 @@
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
+      <div id="placeholder-nav"></div>
     </header>
 
     <main>
-      <section class="intro">
+      <section id="intro" data-aos="fade-right">
         <b-container>
           <b-row>
             <b-col cols="12" md="5"
@@ -38,15 +39,32 @@
                 <a class="link" href="#Federations">See federation</a>
               </div></b-col
             >
-            <b-col md="7"
-              >
-              <div class="box">
-                <img class="img-fluid d-none d-md-block" src="@/assets/section1.png"
-            /></div></b-col>
+            <b-col md="7" class="d-none d-md-flex">
+              <img class="img-fluid" src="@/assets/section1.png"
+            /></b-col>
           </b-row>
         </b-container>
       </section>
-      <section></section>
+      <section id="Federations" data-aos="fade-up">
+        <b-container>
+          <b-row>
+            <b-col cols="12">
+              <div class="box">
+                <div class="title text-center">Federations</div>
+                <div class="cards">
+                  <card-federation
+                    v-for="fed in federations"
+                    :key="fed.title"
+                    :title="fed.title"
+                    :description="fed.description"
+                    :link="fed.link"
+                  ></card-federation>
+                </div>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
       <section></section>
     </main>
   </div>
@@ -54,24 +72,119 @@
 
 <script>
 import Logo from "../components/Logo.vue";
+import CardFederation from "../components/CardFederation.vue";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default {
   name: "Home",
-  components: { Logo },
+  components: { Logo, CardFederation },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+    AOS.init({
+      duration: 600,
+    });
+  },
+  data() {
+    return {
+      federations: [
+        {
+          title: "Dementia",
+          description: "The dementia federation primarily illustrates the feasibility and value of federating real-world clinical data collected during routine medical practice, representing the full spectrum of patient profiles, in comparison with structured research cohort data from usually biased populations. Three clinical datasets have been curated and harmonized, including real-world clinical data from the Leenaards Memory Centre (CLM) in Lausanne (1032 patients), IRCCS Instituto Centro San Giovanni di Dio Fatebenefratelli in Brescia (1960 patients) and CHU Lille (1102 patients).",
+          available: true,
+          databases: [
+            "CHUV, Leenaards Memory Centre (Lausanne, Switzerland)",
+            "IRCCS Centro San Giovanni di Dio, Fatebenefratelli (Brescia, Italy)",
+            "CHU Lille (Lille, France)",
+          ],
+          nbRecords: 6348,
+          link: "https://dementia.hbpmip.link/",
+        },
+        {
+          title: "Dementia",
+          description: "",
+          available: true,
+          databases: [
+            "CHUV, Leenaards Memory Centre (Lausanne, Switzerland)",
+            "IRCCS Centro San Giovanni di Dio, Fatebenefratelli (Brescia, Italy)",
+            "CHU Lille (Lille, France)",
+          ],
+          nbRecords: 6348,
+        },
+        {
+          title: "Dementia",
+          description: "",
+          available: true,
+          databases: [
+            "CHUV, Leenaards Memory Centre (Lausanne, Switzerland)",
+            "IRCCS Centro San Giovanni di Dio, Fatebenefratelli (Brescia, Italy)",
+            "CHU Lille (Lille, France)",
+          ],
+          nbRecords: 6348,
+        },
+        {
+          title: "Dementia",
+          description: "",
+          available: true,
+          databases: [
+            "CHUV, Leenaards Memory Centre (Lausanne, Switzerland)",
+            "IRCCS Centro San Giovanni di Dio, Fatebenefratelli (Brescia, Italy)",
+            "CHU Lille (Lille, France)",
+          ],
+          nbRecords: 6348,
+        },
+      ],
+    };
+  },
+  methods: {
+    handleScroll() {
+      const navbar = document.querySelector(".main-navbar");
+      if (window.scrollY > 85) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
+#placeholder-nav {
+  height: 80px;
+}
 section {
-  &.intro {
-    margin-top: 80px;
+  margin-top: 40px;
+  min-height: 400px;
+
+  .img-fluid {
+    max-height: 100%;
+  }
+
+  &#Federations {
+    .cards {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-content: space-evenly;
+      row-gap: 40px;
+      column-gap: 20px;
+    }
+  }
+
+  &#intro {
+    .container {
+      margin-top: 80px;
+    }
+
     .row > div {
-      height: 70vh;
-      //.box {
-              display: flex;
+      min-height: 400px;
+      height: 65vh;
+      display: flex;
       justify-content: center;
       align-items: center;
-      //}
     }
   }
   .box {
@@ -81,7 +194,7 @@ section {
       font-weight: bold;
       font-size: 45px;
       line-height: 45px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
     .link {
       margin-top: 20px;
@@ -95,9 +208,11 @@ section {
 }
 
 .navbar {
+  &.scrolled {
+    box-shadow: 0px 3px 10px 1px #0000002e;
+  }
   padding-left: 40px;
   padding-right: 40px;
-  margin-top: 10px;
   .nav-item {
     padding: 0 8px;
   }
