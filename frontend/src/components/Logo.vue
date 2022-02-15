@@ -113,6 +113,7 @@
   min-width: 160px;
   transform: none !important;
   padding-left: 15px;
+  color: black;
 
   .logo__background {
     fill: url(#linear-gradient);

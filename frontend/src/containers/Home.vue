@@ -9,7 +9,7 @@
         fixed="top"
       >
         <b-navbar-brand id="navbar-branding"
-          ><span>MIP</span> <Logo />
+          ><span><a href="/" class="text-reset text-decoration-none">MIP</a></span> <a href="https://ebrains.eu/" target="_blank" ref="noopener noreferrer"><Logo /></a>
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
