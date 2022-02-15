@@ -36,7 +36,7 @@
                   >A powerful federated data processing and analysis system that
                   preserves patient privacy</span
                 >
-                <a class="link" href="#Federations">See federation</a>
+                <a class="link" href="#Federations">See federations</a>
               </div></b-col
             >
             <b-col md="7" class="d-none d-md-flex">
