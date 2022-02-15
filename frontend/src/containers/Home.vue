@@ -16,7 +16,7 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item href="#">Home</b-nav-item>
+            <b-nav-item href="#top">Home</b-nav-item>
             <b-nav-item href="#Federations">Federations</b-nav-item>
             <b-nav-item href="#Documentation">Documentation</b-nav-item>
           </b-navbar-nav>
@@ -26,7 +26,7 @@
     </header>
 
     <main>
-      <section id="intro" data-aos="fade-right">
+      <section id="Intro" data-aos="fade-right">
         <b-container>
           <b-row>
             <b-col cols="12" md="5"
@@ -45,7 +45,7 @@
           </b-row>
         </b-container>
       </section>
-      <section id="Federations" data-aos="fade-up">
+      <section id="Federations" data-aos="fade-up" data-aos-offset="-100">
         <b-container fluid>
           <b-row>
             <b-col cols="12">
@@ -69,7 +69,37 @@
           </b-row>
         </b-container>
       </section>
-      <section id="Documentation"></section>
+      <section id="Documentation" data-aos="fade-up">
+        <b-container>
+          <b-row>
+            <b-col md="7" class="d-none d-md-flex">
+              <img class="img-fluid" src="@/assets/section3.png"
+            /></b-col>
+            <b-col cols="12" md="5"
+              ><div class="box">
+                <div class="title">Documentation</div>
+                <div>
+                  <span
+                    >The MIP compares and analyses patients' data distributed
+                    across centers without requiring the data to be sent out
+                    from their site of origin. Most importantly - data are never
+                    moved, copied nor transferred. You can find full
+                    documentation on GitHub.</span
+                  >
+                </div>
+                <div class="mt-3">
+                  <a
+                    target="_blank"
+                    class="btn btn-primary"
+                    href="https://github.com/HBPMedical/mip-docs"
+                    ><b-icon-github/>  GitHub</a
+                  >
+                </div>
+              </div>
+              </b-col>
+          </b-row>
+        </b-container>
+      </section>
     </main>
   </div>
 </template>
@@ -77,12 +107,13 @@
 <script>
 import Logo from "../components/Logo.vue";
 import CardFederation from "../components/CardFederation.vue";
+import { BIconGithub } from "bootstrap-vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default {
   name: "Home",
-  components: { Logo, CardFederation },
+  components: { Logo, CardFederation, BIconGithub },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
     AOS.init({
@@ -106,7 +137,8 @@ export default {
         },
         {
           title: "Traumatic Brain Injury (TBI)",
-          description: "This federation includes representatives from the two largest worldwide TBI research cohorts, CREACTIVE (Collaborative Research on Acute Traumatic brain Injury in intensiVE care medicine in Europe) and Center-TBI, which are part of a major clinical research initiative InTBIR (International Initiative for Traumatic Brain Injury Research), developed in Europe and North-America to tackle the public health issue represented by TBI.",
+          description:
+            "This federation includes representatives from the two largest worldwide TBI research cohorts, CREACTIVE (Collaborative Research on Acute Traumatic brain Injury in intensiVE care medicine in Europe) and Center-TBI, which are part of a major clinical research initiative InTBIR (International Initiative for Traumatic Brain Injury Research), developed in Europe and North-America to tackle the public health issue represented by TBI.",
           nodes: [
             "CREACTIVE (stored at the Mario Negri Institute for Pharmacological Research Bergamo, Italy)",
             "Center-TBI (located at INCF, Karolinska Institute, Stockholm, Sweden)",
@@ -116,22 +148,22 @@ export default {
         },
         {
           title: "Mental Health",
-          description: "The federation aims at exploring large-scale Mental Health datasets including clinical signs and symptoms, together with structured neuropsychological assessments and brain imaging data. Data are derived from a pool of individuals in a longitudinal fashion as part of the IMAGEN database, collected by the Imagen consortium from over 2000 adolescents and their parents.",
+          description:
+            "The federation aims at exploring large-scale Mental Health datasets including clinical signs and symptoms, together with structured neuropsychological assessments and brain imaging data. Data are derived from a pool of individuals in a longitudinal fashion as part of the IMAGEN database, collected by the Imagen consortium from over 2000 adolescents and their parents.",
           nodes: [
             "Universitätsklinikum Aachen (Aachen, Germany)",
             "CHUV (Centre Hospitalier Universitaire Vaudois, Lausanne, Switzerland)",
           ],
           nbRecords: 7300,
-          link: "https://mentalhealth.hbpmip.link/"
+          link: "https://mentalhealth.hbpmip.link/",
         },
         {
           title: "Epilepsy",
-          description: "This EBRAINS-embedded federation includes 15 Virtual Machines, assigned to Epilepsy centers from the European Reference Network EpiCARE. Currently data are synthetic, produced from a French national cohort of 1200 patients from 12 different epilepsy centers.",
-          nodes: [
-            "EBRAINS embedded federation of 15 Virtual Machines",
-          ],
+          description:
+            "This EBRAINS-embedded federation includes 15 Virtual Machines, assigned to Epilepsy centers from the European Reference Network EpiCARE. Currently data are synthetic, produced from a French national cohort of 1200 patients from 12 different epilepsy centers.",
+          nodes: ["EBRAINS embedded federation of 15 Virtual Machines"],
           nbRecords: 5958,
-          nbNodes: 15
+          nbNodes: 15,
         },
       ],
     };
@@ -149,10 +181,15 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" >
+#Federations,
+#Documentation {
+  scroll-margin-top: 250px;
+}
 
-#Federations, #Documentation {
-  scroll-margin-top: 250px
+#Documentation  {
+  margin-top: 130px;
+  margin-bottom: 100px;
 }
 
 #placeholder-nav {
@@ -165,8 +202,11 @@ section {
   .img-fluid {
     max-height: 100%;
   }
-
   &#Federations {
+    background-image: url("~@/assets/section2.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
     .cards {
       margin-top: 40px;
       display: flex;
@@ -179,23 +219,22 @@ section {
       .card-fed {
         max-width: 30%;
         width: 25%;
-        
-        @media (max-width: 1200px) { 
+
+        @media (max-width: 1200px) {
           width: 40%;
           max-width: 45%;
         }
 
-        @media (max-width: 768px) { 
+        @media (max-width: 768px) {
           width: 90%;
           max-width: 95%;
         }
-
-
       }
     }
   }
 
-  &#intro {
+  &#Intro,
+  &#Documentation {
     .row > div {
       min-height: 400px;
       height: 65vh;
