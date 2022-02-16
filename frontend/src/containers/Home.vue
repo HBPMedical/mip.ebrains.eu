@@ -264,8 +264,10 @@ section {
 }
 
 .navbar {
+  transition: box-shadow 0.3s ease-in-out;
   &.scrolled {
     box-shadow: 0px 3px 10px 1px #0000002e;
+   
   }
   padding-left: 40px;
   padding-right: 40px;
