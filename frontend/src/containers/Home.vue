@@ -32,9 +32,9 @@
             <b-col cols="12" md="5"
               ><div class="box">
                 <div class="title">Medical Informatics Platform</div>
-                <span
+                <p
                   >A powerful federated data processing and analysis system that
-                  preserves patient privacy</span
+                  preserves patient privacy</p
                 >
                 <a class="link" href="#Federations">See federations</a>
               </div></b-col
@@ -79,12 +79,12 @@
               ><div class="box">
                 <div class="title">Documentation</div>
                 <div>
-                  <span
+                  <p
                     >The MIP compares and analyses patients' data distributed
                     across centers without requiring the data to be sent out
                     from their site of origin. Most importantly - data are never
                     moved, copied nor transferred. You can find full
-                    documentation on GitHub.</span
+                    documentation on GitHub.</p
                   >
                 </div>
                 <div class="mt-3">
@@ -257,8 +257,9 @@ section {
       text-transform: uppercase;
       display: block;
     }
-    span {
+    span, p {
       font-weight: 100;
+      text-align: justify;
     }
   }
 }
