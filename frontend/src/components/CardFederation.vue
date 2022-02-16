@@ -20,6 +20,7 @@
         <template v-slot:after="slotProps">
           <b-button
             size="sm"
+            class="more shadow-none text-decoration-none"
             variant="link"
             v-if="slotProps.clamped || slotProps.expanded"
             v-on:click="slotProps.toggle()"
@@ -29,7 +30,7 @@
         </template>
       </v-clamp>
     </b-card-text>
-    <a v-if="link" :href="link" class="link">Access federation</a>
+    <a v-if="link" :href="link" class="link" target="_blank" ref="noopener noreferrer">Access federation</a>
     <a v-else>UPCOMING...</a>
   </b-card>
 </template>
@@ -58,7 +59,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .card-fed {
   min-width: 300px;
   width: 400px;
@@ -69,6 +70,10 @@ export default {
 
   .link {
     text-align: right;
+  }
+
+  .btn-link.more:focus {
+    outline: none;
   }
 
   .card-body p,
