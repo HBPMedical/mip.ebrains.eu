@@ -170,7 +170,7 @@ export default {
           title: "Public MIP",
           description:
             "The PUBLIC-MIP installed on the EBRAINS RI and available via EBRAINS accreditation on the EBRAINS website. EBRAINS users can explore the service with no requirement for installation or download. Analyse online all data placed in the public MIP and test the available MIP analytical tools. The public MIP only contains synthetic data, merely intended for exploring the system and testing its analytical capabilities. What users can test and do on the Public MIP: Experiment on synthetic and public datasets in Epilepsy, Dementia, Mental Health and TBI; select datasets, variables and co-variables to define the experimental parameters; choose between available algorithms (15 algorithms ranging from descriptive statistics, parametric statistics to supervised and unsupervised machine learning are built into the MIP); create, safe and share experiments to perform statistical analysis. Access MIP Training Materials.",
-          nbRecords: 2188,
+          nbRecords: 2587,
           link: "http://hbpmip.link"
         },
         {
