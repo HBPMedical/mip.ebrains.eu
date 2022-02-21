@@ -70,10 +70,18 @@ export default {
 
   .link {
     text-align: right;
+    margin-top: auto;
   }
 
   .btn-link.more:focus {
     outline: none;
+  }
+
+  .card-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   .card-body p,
