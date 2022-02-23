@@ -2,7 +2,7 @@ version: "3"
 
 services:
   frontend:
-    image: hbpmip/mip-ebrains-eu:latest
+    image: hbpmip/mip-ebrains-eu:1.0.0
     restart: always
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
