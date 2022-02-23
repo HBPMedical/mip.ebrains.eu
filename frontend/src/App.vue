@@ -1,5 +1,9 @@
 <template>
-  <div id="app">
+  <div v-if="$route.path == '/'">
+  <router-view :key="$route.fullPath" class="content"></router-view>
+    <Footer />
+  </div>
+  <div id="app" v-else>
     <Navigation />
     <router-view :key="$route.fullPath" class="content"></router-view>
     <Footer />

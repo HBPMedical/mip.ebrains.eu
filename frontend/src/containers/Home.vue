@@ -1,80 +1,313 @@
 <template>
   <div>
-    <b-container
-      fluid
-      class="header d-flex align-items-center justify-content-center"
-    >
-      <div class="header-card">
-        <h1>The Medical Informatics Platform</h1>
-        <p>Secure federated analysis on clinical data</p>
-      </div>
-      
-    </b-container>
-    <div class="border-mip"></div>
-    <b-container class="content">
-      <div class="moved">
-        <div>The documentation moved to Github <a href="https://github.com/HBPMedical/mip-docs/">https://github.com/HBPMedical/mip-docs/</a></div>
-      </div>
-    </b-container>
+    <header>
+      <b-navbar
+        toggleable="lg"
+        type="light"
+        variant="white"
+        class="main-navbar"
+        fixed="top"
+      >
+        <b-navbar-brand id="navbar-branding"
+          ><span><a href="/" class="text-reset text-decoration-none">MIP</a></span> <a href="https://ebrains.eu/" target="_blank" ref="noopener noreferrer"><Logo /></a>
+        </b-navbar-brand>
+
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item href="#top">Home</b-nav-item>
+            <b-nav-item href="#Federations">Federations</b-nav-item>
+            <b-nav-item href="#Documentation">Documentation</b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+      <div id="placeholder-nav"></div>
+    </header>
+
+    <main>
+      <section id="Intro" data-aos="fade-right">
+        <b-container>
+          <b-row>
+            <b-col cols="12" md="5"
+              ><div class="box">
+                <div class="title">Medical Informatics Platform</div>
+                <p
+                  >A powerful federated data processing and analysis system that
+                  preserves patient privacy</p
+                >
+                <a class="link" href="#Federations">See federations</a>
+              </div></b-col
+            >
+            <b-col md="7" class="d-none d-md-flex">
+              <img class="img-fluid" src="@/assets/section1.png"
+            /></b-col>
+          </b-row>
+        </b-container>
+      </section>
+      <section id="Federations" data-aos="fade-up" data-aos-offset="-100">
+        <b-container fluid>
+          <b-row>
+            <b-col cols="12">
+              <div class="box">
+                <div class="title text-center">Federations</div>
+                <div class="cards">
+                  <card-federation
+                    v-for="fed in federations"
+                    :key="fed.title"
+                    :title="fed.title"
+                    :description="fed.description"
+                    :link="fed.link"
+                    :nbRecords="fed.nbRecords"
+                    :nodes="fed.nodes"
+                    :version="fed.version"
+                    :nbNodes="fed.nbNodes"
+                  ></card-federation>
+                </div>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
+      </section>
+      <section id="Documentation" data-aos="fade-up">
+        <b-container>
+          <b-row>
+            <b-col md="7" class="d-none d-md-flex">
+              <img class="img-fluid" src="@/assets/section3.png"
+            /></b-col>
+            <b-col cols="12" md="5"
+              ><div class="box">
+                <div class="title">Documentation</div>
+                <div>
+                  <p
+                    >The MIP compares and analyses patients' data distributed
+                    across centers without requiring the data to be sent out
+                    from their site of origin. Most importantly - data are never
+                    moved, copied nor transferred. You can find full
+                    documentation on GitHub.</p
+                  >
+                </div>
+                <div class="mt-3">
+                  <a
+                    target="_blank"
+                    class="btn btn-primary"
+                    href="https://github.com/HBPMedical/mip-docs"
+                    ><b-icon-github/>  GitHub</a
+                  >
+                </div>
+              </div>
+              </b-col>
+          </b-row>
+        </b-container>
+      </section>
+    </main>
   </div>
 </template>
 
 <script>
-import gql from "graphql-tag";
+import Logo from "../components/Logo.vue";
+import CardFederation from "../components/CardFederation.vue";
+import { BIconGithub } from "bootstrap-vue";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default {
+  name: "Home",
+  components: { Logo, CardFederation, BIconGithub },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+    AOS.init({
+      duration: 600,
+    });
+  },
   data() {
     return {
-      articles: [],
+      federations: [
+        {
+          title: "Dementia",
+          description:
+            "The dementia federation primarily illustrates the feasibility and value of federating real-world clinical data collected during routine medical practice, representing the full spectrum of patient profiles, in comparison with structured research cohort data from more biased populations. Three clinical datasets have been curated and harmonized, including real-world clinical data from the Leenaards Memory Centre (CLM) in Lausanne (1032 patients), IRCCS Instituto Centro San Giovanni di Dio Fatebenefratelli in Brescia (1960 patients) and CHU Lille (1102 patients), and can be compared to the most well known dementia public database, ADNI.",
+          nodes: [
+            "CHUV, Leenaards Memory Centre (Lausanne, Switzerland)",
+            "IRCCS Centro San Giovanni di Dio, Fatebenefratelli (Brescia, Italy)",
+            "CHU Lille (Lille, France)",
+          ],
+          nbRecords: 6348,
+          link: "https://dementia.hbpmip.link/",
+        },
+        {
+          title: "Traumatic Brain Injury (TBI)",
+          description:
+            "This federation includes representatives from the two largest worldwide TBI research cohorts, CREACTIVE (Collaborative Research on Acute Traumatic brain Injury in intensiVE care medicine in Europe) and Center-TBI, which are part of a major clinical research initiative InTBIR (International Initiative for Traumatic Brain Injury Research), developed in Europe and North-America to tackle the public health issue represented by TBI.",
+          nodes: [
+            "CREACTIVE (stored at the Mario Negri Institute for Pharmacological Research Bergamo, Italy)",
+            "Center-TBI (located at INCF, Karolinska Institute, Stockholm, Sweden)",
+          ],
+          nbRecords: 10500,
+          link: "https://tbi.hbpmip.link/",
+        },
+        {
+          title: "Mental Health",
+          description:
+            "The federation aims at exploring large-scale Mental Health datasets including clinical signs and symptoms, together with structured neuropsychological assessments and brain imaging data. Data are derived from a pool of individuals in a longitudinal fashion as part of the IMAGEN database, collected by the Imagen consortium from over 2000 adolescents and their parents.",
+          nodes: [
+            "Universitätsklinikum Aachen (Aachen, Germany)",
+            "CHUV (Centre Hospitalier Universitaire Vaudois, Lausanne, Switzerland)",
+          ],
+          nbRecords: 7300,
+          link: "https://mentalhealth.hbpmip.link/",
+        },
+        {
+          title: "Epilepsy",
+          description:
+            "This EBRAINS-embedded federation includes 15 Virtual Machines, assigned to Epilepsy centers from the European Reference Network EpiCARE. Currently data are synthetic, produced from a French national cohort of 1200 patients from 12 different epilepsy centers.",
+          nodes: ["EBRAINS embedded federation of 15 Virtual Machines"],
+          nbRecords: 5958,
+          nbNodes: 15,
+          link: "https://epilepsy.hbpmip.link"
+        },
+        {
+          title: "Public MIP",
+          description:
+            "The PUBLIC-MIP installed on the EBRAINS RI and available via EBRAINS accreditation on the EBRAINS website. EBRAINS users can explore the service with no requirement for installation or download. Analyse online all data placed in the public MIP and test the available MIP analytical tools. The public MIP only contains synthetic data, merely intended for exploring the system and testing its analytical capabilities. What users can test and do on the Public MIP: Experiment on synthetic and public datasets in Dementia, Mental Health and TBI; select datasets, variables and co-variables to define the experimental parameters; choose between available algorithms (15 algorithms ranging from descriptive statistics, parametric statistics to supervised and unsupervised machine learning are built into the MIP); create, safe and share experiments to perform statistical analysis. Access MIP Training Materials.",
+          nbRecords: 2188,
+          link: "http://hbpmip.link"
+        },
+        {
+          title: "MIP Hands-on",
+          description:
+            "This fully EBRAINS-hosted federation, is providing the MIP User Training environment and contains synthetic and public datasets in Epilepsy, Dementia, Mental Health and TBI.",
+          nbRecords: 503320,
+          link: "http://handson.hbpmip.link"
+        },
+      ],
     };
   },
-  apollo: {
-    articles: gql`
-      query Articles {
-        articles(
-          sort: "order:asc"
-        ) {
-          id
-          title
-          content
-          image {
-            url
-          }
-        }
+  methods: {
+    handleScroll() {
+      const navbar = document.querySelector(".main-navbar");
+      if (window.scrollY > 85) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
       }
-    `,
+    },
   },
 };
 </script>
 
-<style scoped>
-.moved {
-  margin-top: 8rem;
+<style lang="scss" >
+#Federations,
+#Documentation {
+  scroll-margin-top: 250px;
+}
+
+#Documentation  {
+  margin-top: 130px;
+  margin-bottom: 100px;
+}
+
+#placeholder-nav {
+  height: 80px;
+}
+section {
+  margin-top: 40px;
+  min-height: 400px;
+
+  .img-fluid {
+    max-height: 100%;
+  }
+  &#Federations {
+    background-image: url("~@/assets/section2.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    .cards {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-content: space-evenly;
+      row-gap: 40px;
+      column-gap: 50px;
+      .card-fed {
+        max-width: 30%;
+        width: 25%;
+
+        @media (max-width: 1200px) {
+          width: 40%;
+          max-width: 45%;
+        }
+
+        @media (max-width: 768px) {
+          width: 90%;
+          max-width: 95%;
+        }
+      }
+    }
+  }
+
+  &#Intro,
+  &#Documentation {
+    .row > div {
+      min-height: 400px;
+      height: 65vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .box {
+    align-self: center;
+    padding: 15px;
+    .title {
+      font-weight: bold;
+      font-size: 45px;
+      line-height: 45px;
+      margin-bottom: 30px;
+    }
+    .link {
+      margin-top: 20px;
+      text-transform: uppercase;
+      display: block;
+    }
+    span, p {
+      font-weight: 100;
+      text-align: justify;
+    }
+  }
+}
+
+.navbar {
+  transition: box-shadow 0.3s ease-in-out;
+  &.scrolled {
+    box-shadow: 0px 3px 10px 1px #0000002e;
+   
+  }
+  padding-left: 40px;
+  padding-right: 40px;
+  .nav-item {
+    padding: 0 8px;
+  }
+  .navbar-nav .nav-link {
+    color: #0c0c0c;
+    &:hover {
+      color: #4e4e4e;
+    }
+  }
+}
+
+#navbar-branding {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 48px;
   display: flex;
-  justify-content: center;
   align-items: center;
-}
 
-.header {
-  background: no-repeat top/cover url("~@/assets/system-2660914_1920.jpg");
-  height: 20rem;
+  span {
+    border-right: 1px solid;
+    padding-right: 15px;
+  }
 }
-
-.header-card {
-  width: 960px;
-  text-align: center;
-  color: white;
-}
-
-.header-card h1 {
-  font-size: 4rem;
-  font-weight: bolder;
-  color: white;
-}
-
-.header-card p {
-  font-size: 1.5rem;
-  font-weight: bolder;
-}
-
 </style>

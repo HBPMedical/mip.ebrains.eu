@@ -31,7 +31,7 @@ services:
     command: bash -c "yarn install && yarn build && yarn start"
 
   db:
-    image: postgres
+    image: postgres:12-alpine
     restart: always
     volumes:
       - ./db/prod/${POSTGRES_DB}:/var/lib/postgresql/data

@@ -27,7 +27,7 @@ services:
       - devdb
 
   devdb:
-    image: postgres
+    image: postgres:12-alpine
     restart: always
     volumes:
       - ./db/dev/${POSTGRES_DB}:/var/lib/postgresql/data
