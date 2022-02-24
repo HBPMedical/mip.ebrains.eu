@@ -9,7 +9,15 @@
         fixed="top"
       >
         <b-navbar-brand id="navbar-branding"
-          ><span><a href="/" class="text-reset text-decoration-none">MIP</a></span> <a href="https://ebrains.eu/" target="_blank" ref="noopener noreferrer"><Logo /></a>
+          ><span
+            ><a href="/" class="text-reset text-decoration-none">MIP</a></span
+          >
+          <a
+            href="https://ebrains.eu/"
+            target="_blank"
+            ref="noopener noreferrer"
+            ><Logo
+          /></a>
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -32,10 +40,10 @@
             <b-col cols="12" md="5"
               ><div class="box">
                 <div class="title">Medical Informatics Platform</div>
-                <p
-                  >A powerful federated data processing and analysis system that
-                  preserves patient privacy</p
-                >
+                <p>
+                  A powerful federated data processing and analysis system that
+                  preserves patient privacy
+                </p>
                 <a class="link" href="#Federations">See federations</a>
               </div></b-col
             >
@@ -79,24 +87,24 @@
               ><div class="box">
                 <div class="title">Documentation</div>
                 <div>
-                  <p
-                    >The MIP compares and analyses patients' data distributed
+                  <p>
+                    The MIP compares and analyses patients' data distributed
                     across centers without requiring the data to be sent out
                     from their site of origin. Most importantly - data are never
                     moved, copied nor transferred. You can find full
-                    documentation on GitHub.</p
-                  >
+                    documentation on GitHub.
+                  </p>
                 </div>
                 <div class="mt-3">
                   <a
                     target="_blank"
                     class="btn btn-primary"
                     href="https://github.com/HBPMedical/mip-docs"
-                    ><b-icon-github/>  GitHub</a
+                    ><b-icon-github /> GitHub</a
                   >
                 </div>
               </div>
-              </b-col>
+            </b-col>
           </b-row>
         </b-container>
       </section>
@@ -147,6 +155,35 @@ export default {
           link: "https://tbi.hbpmip.link/",
         },
         {
+          title: "Epilepsy",
+          description:
+            "This EBRAINS-embedded federation includes 15 Virtual Machines, assigned to Epilepsy centers from the European Reference Network EpiCARE. Currently data are synthetic, produced from a French national cohort of 1200 patients from 12 different epilepsy centers.",
+          nodes: ["EBRAINS embedded federation of 15 Virtual Machines"],
+          nbRecords: 5958,
+          nbNodes: 15,
+          link: "https://epilepsy.hbpmip.link",
+        },
+        {
+          title: "NEURO Cohort",
+          description: `The NEURO Cohort project gathers a European network of 40 sites dedicated to neurodegenerative (ND) research, which are committed to the harmonisation and sharing of ten routinely-collected variables. These sites include universities, research centres and memory clinics, representing members of the original EPAD consortium and the extended IMI NEURONET researcher network. The goal of the NEURO Cohort is to provide a dataset that can be utilised for feasibility analyses and European cohort characterisation, to accelerate and streamline initiation and recruitment of research projects and studies.
+
+The pilot has entailed the production of the NEURO Cohort common data model (CDM), data management tools, the installation of the federated network and the generation of synthetic records. The pilot acts as a proof-of-concept with a subset of sites that will facilitate the onboarding of the wider NEURO Cohort network.`,
+          nbRecords: 32550,
+          nodes: [
+            "Barcelonabeta Brain Research Center , Barcelone, Spain",
+            "Univeristy of Perugia, Center for Memory Disturbances, Perugia, Italy",
+            "Fundación Cita-Alzheimer Fundazioa, Donostia, Spain",
+          ],
+          link: "https://neurocohort.hbpmip.link",
+        },
+        {
+          title: "Public MIP",
+          description:
+            "The PUBLIC-MIP installed on the EBRAINS RI and available via EBRAINS accreditation on the EBRAINS website. EBRAINS users can explore the service with no requirement for installation or download. Analyse online all data placed in the public MIP and test the available MIP analytical tools. The public MIP only contains synthetic data, merely intended for exploring the system and testing its analytical capabilities. What users can test and do on the Public MIP: Experiment on synthetic and public datasets in Dementia, Mental Health and TBI; select datasets, variables and co-variables to define the experimental parameters; choose between available algorithms (15 algorithms ranging from descriptive statistics, parametric statistics to supervised and unsupervised machine learning are built into the MIP); create, safe and share experiments to perform statistical analysis. Access MIP Training Materials.",
+          nbRecords: 21191,
+          link: "https://hbpmip.link",
+        },
+        {
           title: "Mental Health",
           description:
             "The federation aims at exploring large-scale Mental Health datasets including clinical signs and symptoms, together with structured neuropsychological assessments and brain imaging data. Data are derived from a pool of individuals in a longitudinal fashion as part of the IMAGEN database, collected by the Imagen consortium from over 2000 adolescents and their parents.",
@@ -158,27 +195,11 @@ export default {
           link: "https://mentalhealth.hbpmip.link/",
         },
         {
-          title: "Epilepsy",
-          description:
-            "This EBRAINS-embedded federation includes 15 Virtual Machines, assigned to Epilepsy centers from the European Reference Network EpiCARE. Currently data are synthetic, produced from a French national cohort of 1200 patients from 12 different epilepsy centers.",
-          nodes: ["EBRAINS embedded federation of 15 Virtual Machines"],
-          nbRecords: 5958,
-          nbNodes: 15,
-          link: "https://epilepsy.hbpmip.link"
-        },
-        {
-          title: "Public MIP",
-          description:
-            "The PUBLIC-MIP installed on the EBRAINS RI and available via EBRAINS accreditation on the EBRAINS website. EBRAINS users can explore the service with no requirement for installation or download. Analyse online all data placed in the public MIP and test the available MIP analytical tools. The public MIP only contains synthetic data, merely intended for exploring the system and testing its analytical capabilities. What users can test and do on the Public MIP: Experiment on synthetic and public datasets in Dementia, Mental Health and TBI; select datasets, variables and co-variables to define the experimental parameters; choose between available algorithms (15 algorithms ranging from descriptive statistics, parametric statistics to supervised and unsupervised machine learning are built into the MIP); create, safe and share experiments to perform statistical analysis. Access MIP Training Materials.",
-          nbRecords: 2188,
-          link: "http://hbpmip.link"
-        },
-        {
           title: "MIP Hands-on",
           description:
             "This fully EBRAINS-hosted federation, is providing the MIP User Training environment and contains synthetic and public datasets in Epilepsy, Dementia, Mental Health and TBI.",
-          nbRecords: 503320,
-          link: "http://handson.hbpmip.link"
+          nbRecords: 1004977,
+          link: "https://handson.hbpmip.link",
         },
       ],
     };
@@ -202,7 +223,7 @@ export default {
   scroll-margin-top: 250px;
 }
 
-#Documentation  {
+#Documentation {
   margin-top: 130px;
   margin-bottom: 100px;
 }
@@ -272,7 +293,8 @@ section {
       text-transform: uppercase;
       display: block;
     }
-    span, p {
+    span,
+    p {
       font-weight: 100;
       text-align: justify;
     }
@@ -283,7 +305,6 @@ section {
   transition: box-shadow 0.3s ease-in-out;
   &.scrolled {
     box-shadow: 0px 3px 10px 1px #0000002e;
-   
   }
   padding-left: 40px;
   padding-right: 40px;
