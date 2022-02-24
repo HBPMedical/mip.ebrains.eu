@@ -157,9 +157,9 @@ export default {
         {
           title: "Epilepsy",
           description:
-            "This EBRAINS-embedded federation includes 15 Virtual Machines, assigned to Epilepsy centers from the European Reference Network EpiCARE. Currently data are synthetic, produced from a French national cohort of 1200 patients from 12 different epilepsy centers.",
+            "This EBRAINS-embedded federation includes 15 nodes assigned to Epilepsy centers from the European Reference Network EpiCARE, with a plan to increase to around 30 centers. It offers a data model of about 1000 CDEs, providing deeply phenotyped data of epilepsy surgery patients. Current data are synthetic, produced from a French national cohort of 1200 patients from 12 different epilepsy centers.",
           nodes: ["EBRAINS embedded federation of 15 Virtual Machines"],
-          nbRecords: 5958,
+          nbRecords: 5970,
           nbNodes: 15,
           link: "https://epilepsy.hbpmip.link",
         },
