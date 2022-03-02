@@ -179,8 +179,8 @@ The pilot has entailed the production of the NEURO Cohort common data model (CDM
         {
           title: "Public MIP",
           description:
-            "The PUBLIC-MIP installed on the EBRAINS RI and available via EBRAINS accreditation on the EBRAINS website. EBRAINS users can explore the service with no requirement for installation or download. Analyse online all data placed in the public MIP and test the available MIP analytical tools. The public MIP only contains synthetic data, merely intended for exploring the system and testing its analytical capabilities. What users can test and do on the Public MIP: Experiment on synthetic and public datasets in Dementia, Mental Health and TBI; select datasets, variables and co-variables to define the experimental parameters; choose between available algorithms (15 algorithms ranging from descriptive statistics, parametric statistics to supervised and unsupervised machine learning are built into the MIP); create, safe and share experiments to perform statistical analysis. Access MIP Training Materials.",
-          nbRecords: 21191,
+            "The PUBLIC-MIP installed on the EBRAINS RI and available via EBRAINS accreditation on the EBRAINS website. EBRAINS users can explore the service with no requirement for installation or download. Analyse online all data placed in the public MIP and test the available MIP analytical tools. The public MIP only contains synthetic data, merely intended for exploring the system and testing its analytical capabilities. What users can test and do on the Public MIP: Experiment on synthetic and public datasets in Dementia, Epilepsy, Mental Health and TBI; select datasets, variables and co-variables to define the experimental parameters; choose between available algorithms (15 algorithms ranging from descriptive statistics, parametric statistics to supervised and unsupervised machine learning are built into the MIP); create, safe and share experiments to perform statistical analysis. Access MIP Training Materials.",
+          nbRecords: 521913,
           link: "https://hbpmip.link",
         },
         {
@@ -198,7 +198,7 @@ The pilot has entailed the production of the NEURO Cohort common data model (CDM
           title: "MIP Hands-on",
           description:
             "This fully EBRAINS-hosted federation, is providing the MIP User Training environment and contains synthetic and public datasets in Epilepsy, Dementia, Mental Health and TBI.",
-          nbRecords: 1004977,
+          nbRecords: 521913,
           link: "https://handson.hbpmip.link",
         },
       ],
