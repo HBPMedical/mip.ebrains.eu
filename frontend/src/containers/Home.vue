@@ -158,7 +158,13 @@ export default {
           title: "Epilepsy",
           description:
             "This EBRAINS-embedded federation includes 15 nodes assigned to Epilepsy centers from the European Reference Network EpiCARE, with a plan to increase to around 30 centers. It offers a data model of about 1000 CDEs, providing deeply phenotyped data of epilepsy surgery patients. Current data are synthetic, produced from a French national cohort of 1200 patients from 12 different epilepsy centers.",
-          nodes: ["EBRAINS embedded federation of 15 Virtual Machines"],
+          nodes: [
+            "EBRAINS embedded federation of 15 Virtual Machines",
+            "Centre Hospitalier Universitaire de Lausanne, Lausanne, Switzerland",
+            "Centre Hospitalier Universitaire de Lille, Epilepsy Unit, Lille, France",
+            "Paracelsus Medical University, Department of Neurology, Salzburg, Austria",
+            "Helsinki University Hospital, Hospital District of Helsinki and Uusimaa"
+          ],
           nbRecords: 5970,
           nbNodes: 15,
           link: "https://epilepsy.hbpmip.link",
@@ -173,6 +179,7 @@ The pilot has entailed the production of the NEURO Cohort common data model (CDM
             "Barcelonabeta Brain Research Center , Barcelone, Spain",
             "Univeristy of Perugia, Center for Memory Disturbances, Perugia, Italy",
             "Fundación Cita-Alzheimer Fundazioa, Donostia, Spain",
+            "Oxford University, Department of Psychiatry, Oxford, UK",
           ],
           link: "https://neurocohort.hbpmip.link",
         },
