@@ -30,6 +30,7 @@
   height: 40px;
   min-width: 160px;
   transform: none !important;
+  display: flex;
   padding-left: 10px;
   color: black;
 
