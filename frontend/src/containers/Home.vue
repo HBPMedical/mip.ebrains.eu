@@ -48,7 +48,7 @@
               </div></b-col
             >
             <b-col md="7" class="d-none d-md-flex">
-              <img class="img-fluid" src="@/assets/section1.png"
+              <img class="img-fluid" src="@/assets/section1.png" alt="MIP user interface"
             /></b-col>
           </b-row>
         </b-container>
@@ -81,7 +81,7 @@
         <b-container>
           <b-row>
             <b-col md="7" class="d-none d-md-flex">
-              <img class="img-fluid" src="@/assets/section3.png"
+              <img class="img-fluid" src="@/assets/section3.png" alt="MIP working schema"
             /></b-col>
             <b-col cols="12" md="5"
               ><div class="box">
@@ -166,7 +166,7 @@ export default {
             "Helsinki University Hospital, Hospital District of Helsinki and Uusimaa"
           ],
           nbRecords: 5970,
-          nbNodes: 15,
+          nbNodes: 19,
           link: "https://epilepsy.hbpmip.link",
         },
         {
