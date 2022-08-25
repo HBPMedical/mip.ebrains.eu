@@ -61,9 +61,10 @@
                 <div class="title text-center">Federations</div>
                 <div class="cards">
                   <card-federation
-                    v-for="fed in federations"
+                    v-for="(fed, index) in federations"
                     :key="fed.title"
                     :title="fed.title"
+                    :id="index"
                     :description="fed.description"
                     :link="fed.link"
                     :nbRecords="fed.nbRecords"
@@ -162,11 +163,19 @@ export default {
             "EBRAINS embedded federation of 15 Virtual Machines",
             "Centre Hospitalier Universitaire de Lausanne, Lausanne, Switzerland",
             "Centre Hospitalier Universitaire de Lille, Epilepsy Unit, Lille, France",
-            "Paracelsus Medical University, Department of Neurology, Salzburg, Austria",
-            "Helsinki University Hospital, Hospital District of Helsinki and Uusimaa"
+            "Paracelsus Medical University, Salzburg, Austria",
+            "Hospital de Santa Maria, Lisbon, Portugal",
+            "Helsinki University Hospital, Helsinki, Finland",
+            "Universitätsklinikum Erlangen, Epilepsiezentrum EZE, Erlangen, Germany",
+            "National Institute of Clinical Neurosciences, Budapest, Hungary",
+            "Hospital del Mar-Parc de Salut Mar, Barcelona, Spain",
+            "Medical University Vienna, Vienna, Austria",
+            "St. Anne's University Hospital, Brno, Czech Republic",
+            "Hospital Sant Joan de Deu - Hospital Clinic Consortium, Barcelona, Spain",
+            "Kuopio University Hospital, Pohjois-Savon Sairaanhoitpiiri, Kuopio, Finland",
           ],
           nbRecords: 5970,
-          nbNodes: 19,
+          nbNodes: 15,
           link: "https://epilepsy.hbpmip.link",
         },
         {
@@ -176,7 +185,7 @@ export default {
 The pilot has entailed the production of the NEURO Cohort common data model (CDM), data management tools, the installation of the federated network and the generation of synthetic records. The pilot acts as a proof-of-concept with a subset of sites that will facilitate the onboarding of the wider NEURO Cohort network.`,
           nbRecords: 32550,
           nodes: [
-            "Barcelonabeta Brain Research Center , Barcelone, Spain",
+            "Barcelonabeta Brain Research Center, Barcelone, Spain",
             "Univeristy of Perugia, Center for Memory Disturbances, Perugia, Italy",
             "Fundación Cita-Alzheimer Fundazioa, Donostia, Spain",
             "Oxford University, Department of Psychiatry, Oxford, UK",
@@ -238,6 +247,17 @@ The pilot has entailed the production of the NEURO Cohort common data model (CDM
 #placeholder-nav {
   height: 80px;
 }
+
+.large-tooltip .tooltip-inner {
+    max-width: 350px;
+}
+
+@media screen and (max-width: 300px) {
+  .large-tooltip .tooltip-inner {
+    max-width: 100%;
+  }
+}
+
 section {
   margin-top: 40px;
   min-height: 400px;

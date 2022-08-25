@@ -1,7 +1,7 @@
 <template>
   <b-card :title="title" class="card-fed">
     <div class="card-subtitle mb-2 text-muted">
-      <span v-if="nodes" v-b-tooltip.hover :title="nodes.join(' | ')">
+      <span v-if="nodes" :title="nodes.join(' | ')" :id="toolTipId">
         <b-icon-diagram-2></b-icon-diagram-2>
         {{ (nbNodes ? nbNodes : nodes.length) }}
       </span>
@@ -13,6 +13,13 @@
         <b-icon-info-circle></b-icon-info-circle>
         {{ version }}
       </span>
+      <b-tooltip :target="toolTipId" v-if="nodes && nodes.length > 0" customClass="large-tooltip">
+        <ul class="pl-4 text-left mt-2 mr-1">
+          <li v-for="(node, index) in nodes" :key="index">
+            {{ node }}
+          </li>
+        </ul>
+      </b-tooltip>
     </div>
     <b-card-text>
       <v-clamp autoresize :max-lines="5"
@@ -43,6 +50,7 @@ export default {
   components: { VClamp, BIconDiagram2, BIconPeopleFill, BIconInfoCircle },
   name: "CardFederation",
   props: {
+    id: Number,
     title: String,
     description: String,
     nodes: Array,
@@ -54,6 +62,7 @@ export default {
   data() {
     return {
       open: false,
+      toolTipId: `tooltip-${this.id}`
     };
   },
 };
