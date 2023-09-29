@@ -194,7 +194,7 @@ export default {
             "CHU BORDEAUX - Centre Hospitalier Universitaire Pellegrin Tripode",
             "CHU_MONTPELLIER - Centre Hospitalier Universitaire Gui de Chauliac"
           ],
-          link: "https://stroke.hbpmip.link",
+          link: "https://repomse.hbpmip.link",
         },
         {
           title: "Traumatic Brain Injury (TBI)",
