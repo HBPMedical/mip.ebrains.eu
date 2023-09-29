@@ -136,18 +136,18 @@ export default {
           title: "Public MIP",
           description:
             "The PUBLIC-MIP installed on the EBRAINS RI and available via EBRAINS accreditation on the EBRAINS website. EBRAINS users can explore the service with no requirement for installation or download. Analyse online all data placed in the public MIP and test the available MIP analytical tools. New Public Dataset available: The Leenaards Memory Centre (CLM) in Lausanne, Switzerland, made a substantial dataset of anonymised real world patient records (1032 records) available on the MIP. This provides a valuable data source in the field of dementia to the research community, which is otherwise very hard to access. Furthermore, synthetic data, merely intended for exploring the system and testing its analytical capabilities covering different pathologies, are available for the community. What users can test and do on the Public MIP: Experiment on synthetic and public datasets in Dementia, Epilepsy, Mental Health and TBI; select datasets, variables and co-variables to define the experimental parameters; choose between available algorithms (15 algorithms ranging from descriptive statistics, parametric statistics to supervised and unsupervised machine learning are built into the MIP); create, safe and share experiments to perform statistical analysis. Access the MIP Guide and Training Materials.",
-          nbRecords: 521913,
+          nbRecords: 524133,
           link: "https://hbpmip.link",
         },
         {
           title: "FERES - Federating European Registries for Stroke",
           description:
             "National Stroke Registries have played an essential role in accelerating stroke research that affects the advancement and delivery of effective, high-quality care. One of the main objectives of FERES is the development of a framework to impulse the re-use of health data collected in European National Stroke Registries and Electronic Health Records (EHR) in a fully General Data Protection Regulation (GPDR)-compliant way.",
+          nbNodes: 7,
           nodes: [
             "NKUA - National and Kapodistrian University of Athens",
             "UB - University of Basel",
-            "",
-            "In process:",
+            "In progress :",
             "VASCage - VASCage GmbH - Austrian stroke registry",
             "Careggi University Hospital / Hospital Policlinico Umberto I",
             "CHUL - Hospital Center University of Lille",
@@ -174,6 +174,7 @@ export default {
           description:
             "National Stroke Registries have played an essential role in accelerating stroke research that affects the advancement and delivery of effective, high-quality care. One of the main objectives of FERES is the development of a framework to impulse the re-use of health data collected in European National Stroke Registries and Electronic Health Records (EHR) in a fully General Data Protection Regulation (GPDR)-compliant way.",
           nbRecords: 1072,
+          nbNodes: 15,
           nodes: [
             "AP_HM - Centre Hospitalier Universitaire de Marseille",
             "CHU Nice - Centre Hospitalier Universitaire de Nice",
@@ -188,10 +189,10 @@ export default {
             "CHU Lille - Hospital Centre University of Lille",
             "HCL - Hospices Civils de Lyon - Hôpital Neurologique",
             "",
-            "In process :",
+            "In progress :",
             "LA TEPPE - Centre médical de la Teppe - Tain l'hermitage",
             "CHU BORDEAUX - Centre Hospitalier Universitaire Pellegrin Tripode",
-          "CHU_MONTPELLIER - Centre Hospitalier Universitaire Gui de Chauliac"
+            "CHU_MONTPELLIER - Centre Hospitalier Universitaire Gui de Chauliac"
           ],
           link: "https://stroke.hbpmip.link",
         },
