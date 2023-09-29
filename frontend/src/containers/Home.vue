@@ -172,7 +172,7 @@ export default {
         {
           title: "French Epilepsy Network – REPOMSE",
           description:
-            "National Stroke Registries have played an essential role in accelerating stroke research that affects the advancement and delivery of effective, high-quality care. One of the main objectives of FERES is the development of a framework to impulse the re-use of health data collected in European National Stroke Registries and Electronic Health Records (EHR) in a fully General Data Protection Regulation (GPDR)-compliant way.",
+            "The French epilepsy network federates data from 1072 patients over 15 years of age, suffering from drug-resistant partial epilepsy and who started pre-surgical video-EEG monitoring. Recruitment was based on the 15 largest French centres for adult epileptology and videoEEG monitoring for pre-surgical purposes. Data collected regroup past and present medical information, medication and therapy.",
           nbRecords: 1072,
           nbNodes: 15,
           nodes: [
